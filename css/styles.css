@@ -15,7 +15,7 @@
   --max-width: 1180px;
   --radius: 28px;
   --ease: cubic-bezier(.2, .75, .25, 1);
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Figtree", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
   font-synthesis: none;
 }
 
@@ -95,6 +95,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .belief-grid { display: grid; grid-template-columns: 1.7fr .75fr; gap: 76px; align-items: start; }
 .belief blockquote { margin: 0; max-width: 690px; font-size: clamp(2.3rem, 4.2vw, 4.3rem); line-height: 1.06; letter-spacing: -.05em; font-weight: 610; }
 .belief-copy > p:first-child { margin: 0; color: var(--muted); line-height: 1.65; }
+.belief-detail { margin: 22px 0 0; color: var(--ink); line-height: 1.65; font-weight: 560; }
 .hand-note { margin: 50px 0 0; color: var(--ink); font-size: 1.28rem; font-style: italic; transform: rotate(-4deg); }
 
 .essentials { padding-top: 150px; padding-bottom: 160px; }
@@ -149,6 +150,9 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .closing-side { display: flex; flex-direction: column; align-items: flex-start; }
 .closing-side img { margin-left: -18px; }
 .closing-side p { margin: 12px 0 24px; font-weight: 600; }
+.app-store-badge { display: inline-block; border-radius: 9px; transition: transform .2s var(--ease), opacity .2s ease; }
+.app-store-badge:hover { transform: translateY(-2px); opacity: .9; }
+.app-store-badge > img { width: 180px; height: auto; margin: 0; }
 
 .site-footer { padding: 38px 0; background: var(--ink-deep); color: #fff; }
 .footer-grid { display: grid; grid-template-columns: .7fr 1fr auto auto; gap: 40px; align-items: center; }
