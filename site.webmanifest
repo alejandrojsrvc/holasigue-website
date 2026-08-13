@@ -1,0 +1,17 @@
+{
+  "name": "SIGUE",
+  "short_name": "SIGUE",
+  "description": "Bienestar y evolución personal, un día a la vez.",
+  "lang": "es",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#F7F7F8",
+  "theme_color": "#FCC54E",
+  "icons": [
+    {
+      "src": "/assets/sigue-icon.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    }
+  ]
+}
