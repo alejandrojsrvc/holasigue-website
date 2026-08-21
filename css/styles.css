@@ -1,6 +1,6 @@
 :root {
   color-scheme: light;
-  --yellow: #fcc54e;
+  --yellow: #fabb43;
   --yellow-soft: #fff3cf;
   --ink: #222e49;
   --ink-deep: #151d30;
@@ -152,12 +152,11 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .plain-list span { color: var(--muted); font-size: .72rem; }
 .text-link { display: inline-flex; gap: 16px; padding-bottom: 5px; border-bottom: 1px solid var(--ink); font-weight: 750; }
 
-.availability-section { padding: 140px 0 120px; background: var(--yellow); }
+.availability-section { padding: 140px 0 120px; background: #fabb43; }
 .closing-grid { display: grid; grid-template-columns: 1.55fr .45fr; gap: 80px; align-items: end; }
 .closing-grid h2 { margin: 0; max-width: 870px; font-size: clamp(3.2rem, 7vw, 7.2rem); line-height: .91; letter-spacing: -.065em; font-weight: 720; }
 .closing-grid h2 em { color: rgba(34,46,73,.62); }
 .closing-side { display: flex; flex-direction: column; align-items: flex-start; }
-.closing-side img { margin-left: -18px; }
 .closing-side p { margin: 12px 0 24px; font-weight: 600; }
 .app-store-badge { display: inline-block; border-radius: 9px; transition: transform .2s var(--ease), opacity .2s ease; }
 .app-store-badge:hover { transform: translateY(-2px); opacity: .9; }
