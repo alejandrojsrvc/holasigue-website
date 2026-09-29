@@ -1,0 +1,12 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["86SK6M98QS.com.holasigue.com"],
+        "components": [
+          { "/": "/join/*" }
+        ]
+      }
+    ]
+  }
+}

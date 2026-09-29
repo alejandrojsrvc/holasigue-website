@@ -1,0 +1,29 @@
+DirectoryIndex index.html
+RewriteEngine On
+
+# AASA is an extensionless JSON resource and must remain at its canonical path.
+RewriteRule ^\.well-known/apple-app-site-association$ - [END,T=application/json]
+
+# Proxy only the public invitation preview; do not expose a general-purpose proxy.
+RewriteCond %{REQUEST_METHOD} =GET
+RewriteRule ^api/invitations/([A-Za-z0-9_-]{43})/preview$ https://api.holasigue.com/v1/invitations/$1/preview [P,END,NE]
+RewriteRule ^api/ - [R=404,END]
+
+# Keep the invitation URL intact while serving the static landing page.
+RewriteRule ^join/([A-Za-z0-9_-]{43})/?$ join/index.html [END]
+RewriteRule ^join/?$ - [R=404,END]
+
+# Redirect direct .html requests to clean URLs, except the home document.
+RewriteCond %{THE_REQUEST} \s/+(.+)\.html(?:[?\s]) [NC]
+RewriteCond %{REQUEST_URI} !^/index\.html$ [NC]
+RewriteRule ^(.+)\.html$ /$1 [R=301,END,NE]
+
+# Resolve extensionless paths with or without a final slash to existing HTML files.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+?)/?$ $1.html [END]
+
+<Files "apple-app-site-association">
+    ForceType application/json
+</Files>
