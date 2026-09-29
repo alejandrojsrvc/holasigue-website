@@ -16,7 +16,7 @@ Abrir `http://localhost:8080`.
 
 El sitio es estático y puede servirse desde Apache o desde la imagen Docker incluida. Para Apache, el DocumentRoot debe apuntar a la raíz del repositorio y permitir reglas `.htaccess` (`AllowOverride FileInfo`). El archivo `.htaccess` resuelve rutas limpias como `/privacidad` y `/soporte/`, redirige enlaces antiguos `.html`, conserva `/` como inicio y sirve las invitaciones `/join/<token>`. Nginx aplica las mismas rutas desde `nginx/default.conf`.
 
-La ruta same-origin `/api/invitations/<token>/preview` se proxifica hacia la API para no habilitar CORS. Apache necesita tener activos `mod_rewrite`, `mod_proxy` y `mod_proxy_http`. El AASA se sirve directamente desde `.well-known/apple-app-site-association` con Content-Type JSON y sin redirect.
+La ruta same-origin `/api/invitations/<token>/preview` se proxifica hacia la API dentro de la red privada Dokploy para no habilitar CORS. Apache necesita tener activos `mod_rewrite`, `mod_proxy` y `mod_proxy_http`. El AASA se sirve directamente desde `.well-known/apple-app-site-association` con Content-Type JSON y sin redirect.
 
 La imagen Docker conserva Nginx y su configuración en `nginx/default.conf`; allí están implementadas las mismas rutas, el proxy al preview y la redacción del token en el access log del contenedor. Los logs del proxy público que está delante del sitio deben revisarse por separado.
 
@@ -34,7 +34,7 @@ Los títulos, descripciones y canonicales están definidos por página. Si cambi
 
 ## Invitaciones y Universal Links
 
-La ruta `/join/<token>` muestra un preview público mínimo y consulta la API mediante la ruta same-origin `/api/invitations/<token>/preview`. Apache y Nginx proxifican esa ruta hacia `api.holasigue.com`, sin abrir CORS en la API. El preview no se cachea. Nginx registra los paths de invitación con el token redactado; los access logs del proxy externo también deben configurarse para no guardar el token.
+La ruta `/join/<token>` muestra un preview público mínimo y consulta la API mediante la ruta same-origin `/api/invitations/<token>/preview`. Apache y Nginx proxifican esa ruta hacia la API, sin abrir CORS en la API; Nginx usa el servicio privado `sigue-api-umbs8w:3000`. El preview no se cachea. Nginx registra los paths de invitación con el token redactado; los access logs del proxy externo también deben configurarse para no guardar el token.
 
 El AASA está en `.well-known/apple-app-site-association`, asociado únicamente a `86SK6M98QS.com.holasigue.com` y `/join/*`. Debe servirse en `https://holasigue.com/.well-known/apple-app-site-association` con HTTPS, 200, `application/json` y sin redirect.
 
