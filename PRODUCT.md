@@ -22,7 +22,7 @@ SIGUE reúne los tres esenciales en una experiencia de bienestar personal que pe
 
 - La aplicación está dirigida a iPhone y iPad. La landing está en español e inglés y enlaza a su ficha en App Store.
 - Las páginas `/es` y `/en` presentan los tres esenciales, Juntos, Evolución, privacidad y descarga. `/` dirige a la versión elegida o al idioma del navegador.
-- Las páginas de soporte, privacidad y datos de salud responden dudas sobre uso, permisos y tratamiento de datos.
+- Las páginas de soporte, privacidad y datos de salud responden dudas sobre uso, permisos y tratamiento de datos en español y en inglés.
 - Los enlaces `/join/<token>` muestran una invitación y permiten volver a abrirla en la aplicación después de instalarla.
 
 ## Capabilities and Constraints

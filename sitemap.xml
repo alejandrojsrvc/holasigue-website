@@ -19,20 +19,50 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://holasigue.com/privacidad.html</loc>
-    <lastmod>2026-09-28</lastmod>
+    <loc>https://holasigue.com/privacidad</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://holasigue.com/privacidad"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://holasigue.com/en/privacy"/>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://holasigue.com/datos-de-salud.html</loc>
-    <lastmod>2026-09-28</lastmod>
+    <loc>https://holasigue.com/en/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://holasigue.com/privacidad"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://holasigue.com/en/privacy"/>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://holasigue.com/soporte.html</loc>
-    <lastmod>2026-09-28</lastmod>
+    <loc>https://holasigue.com/datos-de-salud</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://holasigue.com/datos-de-salud"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://holasigue.com/en/health-data"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://holasigue.com/en/health-data</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://holasigue.com/datos-de-salud"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://holasigue.com/en/health-data"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://holasigue.com/soporte</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://holasigue.com/soporte"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://holasigue.com/en/support"/>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://holasigue.com/en/support</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://holasigue.com/soporte"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://holasigue.com/en/support"/>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

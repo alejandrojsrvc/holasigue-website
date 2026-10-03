@@ -2,7 +2,7 @@
 
 Landing estática oficial de SIGUE. No requiere compilación, dependencias ni cookies. El preview de invitaciones consulta la API mediante el proxy same-origin del servidor.
 
-La landing tiene páginas indexables independientes en `/es` y `/en`, con `hreflang` recíproco. `/` es una entrada que dirige según la preferencia guardada en el navegador o, en su ausencia, su idioma. El selector ES/EN guarda la elección. Las páginas de soporte y privacidad siguen disponibles en español. Los ejemplos visuales de la nueva landing son ilustrativos mientras se incorporan capturas reales aprobadas.
+La landing tiene páginas indexables independientes en `/es` y `/en`, con `hreflang` recíproco. `/` es una entrada que dirige según la preferencia guardada en el navegador o, en su ausencia, su idioma. El selector ES/EN guarda la elección. Soporte, privacidad y datos de salud están en español y en inglés; las páginas españolas conservan sus rutas públicas históricas. Las invitaciones usan la preferencia guardada o el idioma del navegador y permiten cambiarlo. Los ejemplos visuales de la nueva landing son ilustrativos mientras se incorporan capturas reales aprobadas.
 
 ## Vista local
 

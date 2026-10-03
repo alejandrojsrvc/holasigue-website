@@ -20,6 +20,10 @@ a { color: inherit; text-decoration: none; }
 }
 .brand { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 24px; font-size: 1rem; font-weight: 850; letter-spacing: .09em; }
 .brand img { border-radius: 14px; }
+.invite-language { display: inline-flex; align-items: center; gap: 8px; margin: -10px 0 18px; color: #687080; font-size: .82rem; }
+.invite-language button { padding: 8px 4px; border: 0; background: transparent; color: inherit; font: inherit; cursor: pointer; }
+.invite-language button[aria-pressed="true"] { color: #222e49; font-weight: 850; }
+.invite-language button:focus-visible { outline: 2px solid #6652c9; outline-offset: 3px; border-radius: 4px; }
 .invite-card {
   width: 100%;
   padding: clamp(28px, 7vw, 48px);
