@@ -13,6 +13,10 @@ RewriteRule ^api/ - [R=404,END]
 RewriteRule ^join/([A-Za-z0-9_-]{43})/?$ join/index.html [END]
 RewriteRule ^join/?$ - [R=404,END]
 
+# The English landing route shares its name with the directory of English subpages.
+RewriteRule ^en/$ /en [R=301,END,NE]
+RewriteRule ^en$ en.html [END]
+
 # Redirect direct .html requests to clean URLs, including the home document.
 RewriteCond %{THE_REQUEST} \s/+(.+)\.html(?:[?\s]) [NC]
 RewriteRule ^index\.html$ / [R=301,END,NE,NC]
