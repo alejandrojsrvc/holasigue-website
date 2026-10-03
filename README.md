@@ -26,8 +26,7 @@ Antes de anunciarlo:
 2. Validar los datos estructurados con Rich Results Test.
 3. Registrar el dominio en Google Search Console.
 4. Enviar `https://holasigue.com/sitemap.xml`.
-5. Sustituir los enlaces `mailto:` de descarga por la URL real de App Store cuando exista.
-6. Añadir capturas definitivas del producto cuando estén aprobadas.
+5. Añadir capturas definitivas del producto cuando estén aprobadas.
 
 Los títulos, descripciones y canonicales están definidos por página. Si cambian las rutas durante el despliegue, deben actualizarse también en `sitemap.xml`.
 
@@ -38,4 +37,4 @@ La ruta `/join/<token>` muestra un preview público mínimo y consulta la API me
 
 El AASA está en `.well-known/apple-app-site-association`, asociado únicamente a `86SK6M98QS.com.holasigue.com` y `/join/*`. Debe servirse en `https://holasigue.com/.well-known/apple-app-site-association` con HTTPS, 200, `application/json` y sin redirect.
 
-El botón de descarga usa el enlace TestFlight ya publicado en el sitio. Cuando SIGUE tenga ficha pública de App Store, sustituir ese enlace por la URL oficial verificada. No se implementa deferred deep link: después de instalar, la persona vuelve al mensaje original y toca el enlace otra vez.
+El botón de descarga abre la ficha pública de SIGUE en App Store. No se implementa deferred deep link: después de instalar, la persona vuelve al mensaje original y toca el enlace de invitación otra vez.
