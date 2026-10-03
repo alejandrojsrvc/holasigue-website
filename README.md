@@ -2,7 +2,7 @@
 
 Landing estática oficial de SIGUE. No requiere compilación, dependencias ni cookies. El preview de invitaciones consulta la API mediante el proxy same-origin del servidor.
 
-La landing tiene páginas indexables independientes en `/es` y `/en`, con `hreflang` recíproco. `/` es una entrada que dirige según la preferencia guardada en el navegador o, en su ausencia, su idioma. El selector ES/EN guarda la elección. Soporte, privacidad y datos de salud están en español y en inglés; las páginas españolas conservan sus rutas públicas históricas. Las invitaciones usan la preferencia guardada o el idioma del navegador y permiten cambiarlo. Los ejemplos visuales de la nueva landing son ilustrativos mientras se incorporan capturas reales aprobadas.
+La landing tiene páginas indexables independientes en `/es` y `/en`, con `hreflang` recíproco. `/` es una entrada que dirige según la preferencia guardada en el navegador o, en su ausencia, su idioma. El selector ES/EN guarda la elección. Soporte, privacidad y datos de salud están en español y en inglés; las páginas españolas conservan sus rutas públicas históricas. Los términos de uso bilingües están publicados en `/terminos` y `/en/terms` como borrador no indexable mientras se completan los datos legales del prestador. Las invitaciones usan la preferencia guardada o el idioma del navegador y permiten cambiarlo. Los ejemplos visuales de la nueva landing son ilustrativos mientras se incorporan capturas reales aprobadas.
 
 ## Vista local
 
@@ -27,10 +27,11 @@ La imagen Docker conserva Nginx y su configuración en `nginx/default.conf`; all
 Antes de anunciarlo:
 
 1. Configurar `hola@holasigue.com`, `soporte@holasigue.com` y `privacidad@holasigue.com`.
-2. Validar los datos estructurados con Rich Results Test.
-3. Registrar el dominio en Google Search Console.
-4. Enviar `https://holasigue.com/sitemap.xml`.
-5. Añadir capturas definitivas del producto cuando estén aprobadas.
+2. Completar y revisar la identificación legal pendiente en los términos antes de retirar su estado de borrador o permitir su indexación.
+3. Validar los datos estructurados con Rich Results Test.
+4. Registrar el dominio en Google Search Console.
+5. Enviar `https://holasigue.com/sitemap.xml`.
+6. Añadir capturas definitivas del producto cuando estén aprobadas.
 
 Los títulos, descripciones y canonicales están definidos por página. Si cambian las rutas durante el despliegue, deben actualizarse también en `sitemap.xml`.
 
