@@ -18,7 +18,7 @@ El servidor simple de Python no aplica las reglas de rutas limpias: para revisar
 
 ## Publicación
 
-El sitio es estático y puede servirse desde Apache o desde la imagen Docker incluida. Para Apache, el DocumentRoot debe apuntar a la raíz del repositorio y permitir reglas `.htaccess` (`AllowOverride FileInfo`). El archivo `.htaccess` resuelve rutas limpias como `/privacidad` y `/soporte/`, redirige enlaces antiguos `.html`, conserva `/` como inicio y sirve las invitaciones `/join/<token>`. Nginx aplica las mismas rutas desde `nginx/default.conf`.
+El sitio es estático y puede servirse desde Apache o desde la imagen Docker incluida. Para Apache, el DocumentRoot debe apuntar a la raíz del repositorio y permitir reglas `.htaccess` (`AllowOverride FileInfo`). El archivo `.htaccess` resuelve rutas limpias como `/privacidad` y `/soporte/`, redirige cualquier URL directa `.html` a su ruta limpia (incluido `/index.html` a `/`) y sirve las invitaciones `/join/<token>`. Nginx aplica las mismas rutas desde `nginx/default.conf`.
 
 La ruta same-origin `/api/invitations/<token>/preview` se proxifica a `GET /v1/invitations/<token>` en la API para no habilitar CORS. Apache necesita tener activos `mod_rewrite`, `mod_proxy` y `mod_proxy_http`. El AASA se sirve directamente desde `.well-known/apple-app-site-association` con Content-Type JSON y sin redirect.
 

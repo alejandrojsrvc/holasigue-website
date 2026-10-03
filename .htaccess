@@ -13,10 +13,11 @@ RewriteRule ^api/ - [R=404,END]
 RewriteRule ^join/([A-Za-z0-9_-]{43})/?$ join/index.html [END]
 RewriteRule ^join/?$ - [R=404,END]
 
-# Redirect direct .html requests to clean URLs, except the home document.
+# Redirect direct .html requests to clean URLs, including the home document.
 RewriteCond %{THE_REQUEST} \s/+(.+)\.html(?:[?\s]) [NC]
-RewriteCond %{REQUEST_URI} !^/index\.html$ [NC]
-RewriteRule ^(.+)\.html$ /$1 [R=301,END,NE]
+RewriteRule ^index\.html$ / [R=301,END,NE,NC]
+RewriteCond %{THE_REQUEST} \s/+(.+)\.html(?:[?\s]) [NC]
+RewriteRule ^(.+)\.html$ /$1 [R=301,END,NE,NC]
 
 # Resolve extensionless paths with or without a final slash to existing HTML files.
 RewriteCond %{REQUEST_FILENAME} !-f
