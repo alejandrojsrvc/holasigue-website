@@ -6,7 +6,7 @@ RewriteRule ^\.well-known/apple-app-site-association$ - [END,T=application/json]
 
 # Proxy only the public invitation preview; do not expose a general-purpose proxy.
 RewriteCond %{REQUEST_METHOD} =GET
-RewriteRule ^api/invitations/([A-Za-z0-9_-]{43})/preview$ https://api.holasigue.com/v1/invitations/$1/preview [P,END,NE]
+RewriteRule ^api/invitations/([A-Za-z0-9_-]{43})/preview$ https://api.holasigue.com/v1/invitations/$1 [P,END,NE]
 RewriteRule ^api/ - [R=404,END]
 
 # Keep the invitation URL intact while serving the static landing page.
