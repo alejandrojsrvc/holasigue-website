@@ -2,6 +2,8 @@
 
 Landing estática oficial de SIGUE. No requiere compilación, dependencias ni cookies. El preview de invitaciones consulta la API mediante el proxy same-origin del servidor.
 
+La landing tiene páginas indexables independientes en `/es` y `/en`, con `hreflang` recíproco. `/` es una entrada que dirige según la preferencia guardada en el navegador o, en su ausencia, su idioma. El selector ES/EN guarda la elección. Las páginas de soporte y privacidad siguen disponibles en español. Los ejemplos visuales de la nueva landing son ilustrativos mientras se incorporan capturas reales aprobadas.
+
 ## Vista local
 
 Desde la raíz del repositorio:
@@ -11,6 +13,8 @@ python3 -m http.server 8080
 ```
 
 Abrir `http://localhost:8080`.
+
+El servidor simple de Python no aplica las reglas de rutas limpias: para revisar la landing allí, abrir `/es.html` o `/en.html`. Para comprobar `/`, `/es` y `/en` como en producción, usar Apache o la configuración Nginx incluida.
 
 ## Publicación
 

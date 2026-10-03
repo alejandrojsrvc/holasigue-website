@@ -1,0 +1,19 @@
+{
+  "buildPath": "comp",
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "en.html",
+          "es.html"
+        ],
+        "createdAt": "2026-10-03T16:11:26.462Z",
+        "reason": "Agent: centered .shell supplies horizontal inset and the example panels have 30-58px padding; static detector misses both"
+      }
+    ]
+  }
+}

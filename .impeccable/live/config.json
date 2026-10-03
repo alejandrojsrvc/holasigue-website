@@ -1,0 +1,6 @@
+{
+  "files": ["*.html", "join/*.html"],
+  "insertBefore": "</body>",
+  "commentSyntax": "html",
+  "cspChecked": true
+}
