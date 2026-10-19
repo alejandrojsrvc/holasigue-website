@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#FCC54E">
+  <title>Conectar con SIGUE</title>
+  <link rel="icon" href="/assets/sigue-icon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/connect/connect.css">
+  <script src="/connect/connect.js" defer></script>
+</head>
+<body>
+  <main class="connect-shell">
+    <a class="brand" href="/es" id="brand" aria-label="SIGUE, inicio"><img src="/assets/sigue-icon.png" alt="" width="48" height="48"><span>SIGUE</span></a>
+    <div class="language" role="group" aria-label="Language / Idioma">
+      <button type="button" data-language="es">ES</button><span aria-hidden="true">/</span><button type="button" data-language="en">EN</button>
+    </div>
+    <section class="connect-card" aria-labelledby="title">
+      <p class="eyebrow" id="eyebrow">CONEXIÓN SEGURA</p>
+      <h1 id="title">Conectar SIGUE con ChatGPT</h1>
+      <p class="lead" id="description" role="status">Estamos preparando la conexión.</p>
+      <p class="message" id="message" role="alert" hidden></p>
+
+      <div id="login" hidden>
+        <form id="email-form" method="post">
+          <input type="hidden" name="csrf" class="csrf">
+          <label for="email" id="email-label">Correo electrónico</label>
+          <input id="email" name="email" type="email" autocomplete="username" required maxlength="254">
+          <label for="password" id="password-label">Contraseña</label>
+          <input id="password" name="password" type="password" autocomplete="current-password" required>
+          <button class="primary" id="email-button" type="submit">Entrar en SIGUE</button>
+        </form>
+        <button class="text-button" id="forgot-link" type="button">¿Olvidaste tu contraseña?</button>
+        <div class="social" id="social" hidden>
+          <p id="social-label">O entra con tu cuenta existente</p>
+          <div id="google-button"></div>
+          <button id="apple-button" type="button" hidden>Continuar con Apple</button>
+        </div>
+        <form id="google-form" method="post" hidden><input type="hidden" name="csrf" class="csrf"><input type="hidden" name="credential"></form>
+        <form id="apple-form" method="post" hidden><input type="hidden" name="csrf" class="csrf"><input type="hidden" name="state"><input type="hidden" name="identityToken"></form>
+      </div>
+
+      <div id="forgot" hidden>
+        <form id="forgot-form" method="post">
+          <input type="hidden" name="csrf" class="csrf">
+          <label for="forgot-email" id="forgot-email-label">Correo electrónico</label>
+          <input id="forgot-email" name="email" type="email" autocomplete="email" required maxlength="254">
+          <button class="primary" id="forgot-button" type="submit">Enviar código</button>
+        </form>
+        <button class="text-button back-to-login" type="button">Volver a entrar</button>
+      </div>
+
+      <div id="reset" hidden>
+        <form id="reset-form" method="post">
+          <input type="hidden" name="csrf" class="csrf">
+          <label for="reset-email" id="reset-email-label">Correo electrónico</label>
+          <input id="reset-email" name="email" type="email" autocomplete="email" required maxlength="254">
+          <label for="code" id="code-label">Código de 6 cifras</label>
+          <input id="code" name="code" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" required>
+          <label for="new-password" id="new-password-label">Nueva contraseña (12 caracteres como mínimo)</label>
+          <input id="new-password" name="newPassword" type="password" autocomplete="new-password" minlength="12" maxlength="128" required>
+          <button class="primary" id="reset-button" type="submit">Cambiar contraseña</button>
+        </form>
+        <button class="text-button back-to-login" type="button">Volver a entrar</button>
+      </div>
+
+      <div id="consent" hidden>
+        <p class="account" id="account"></p>
+        <form id="consent-form" method="post">
+          <input type="hidden" name="csrf" class="csrf">
+          <button class="primary" type="submit" name="decision" value="allow" id="allow-button">Autorizar conexión</button>
+          <button class="secondary" type="submit" name="decision" value="deny" id="deny-button">Cancelar</button>
+        </form>
+      </div>
+      <p class="foot" id="privacy-note">La conexión solo identifica tu cuenta SIGUE. No da acceso a tus hábitos, rutinas ni progreso.</p>
+    </section>
+    <a class="home-link" id="home-link" href="/es">Conoce SIGUE</a>
+  </main>
+</body>
+</html>
