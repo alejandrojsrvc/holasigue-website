@@ -14,6 +14,8 @@ const copy = {
     consentTitle: 'Autorizar la conexión',
     consentDescription: 'ChatGPT solicita permiso para confirmar qué cuenta SIGUE has conectado. No podrá leer tus hábitos, rutinas ni progreso.',
     writeDescription: 'ChatGPT solicita permiso para preparar hábitos personalizados en tu cuenta SIGUE. Se crearán en el iPhone cuando abras la app. No podrá leer tus hábitos, rutinas ni progreso.',
+    readDescription: 'ChatGPT solicita permiso para consultar una copia limitada de tus hábitos activos y su progreso diario sincronizado. SIGUE conserva los datos originales en tu iPhone. No podrá leer rutinas ni registros detallados de Salud.',
+    readWriteDescription: 'ChatGPT solicita permiso para consultar hábitos y progreso diario sincronizados, y preparar hábitos nuevos que se crearán cuando abras SIGUE en el iPhone. No podrá leer rutinas ni registros detallados de Salud.',
     forgotTitle: 'Recuperar contraseña', forgotDescription: 'Te enviaremos un código al correo de tu cuenta SIGUE.',
     resetTitle: 'Crear nueva contraseña', resetDescription: 'Introduce el código recibido y tu nueva contraseña.',
     unavailableTitle: 'No pudimos continuar la conexión',
@@ -26,6 +28,8 @@ const copy = {
     allowButton: 'Autorizar conexión', denyButton: 'Cancelar',
     privacyNote: 'La conexión solo identifica tu cuenta SIGUE. No da acceso a tus hábitos, rutinas ni progreso.',
     writePrivacyNote: 'Permites preparar hábitos nuevos. Tus hábitos permanecen en el iPhone y ChatGPT solo podrá consultar el estado de sus solicitudes.',
+    readPrivacyNote: 'Permites consultar hábitos activos y resultados diarios del último año, con fecha de sincronización. SIGUE sigue siendo la fuente de datos original.',
+    readWritePrivacyNote: 'Permites consultar una copia limitada de tus hábitos y preparar hábitos nuevos. SIGUE conserva los datos originales en el iPhone.',
     homeLink: 'Conoce SIGUE', account: 'Cuenta SIGUE',
     errors: {
       request: 'La solicitud de ChatGPT no es válida. Inicia la conexión de nuevo desde ChatGPT.',
@@ -51,6 +55,8 @@ const copy = {
     consentTitle: 'Authorize connection',
     consentDescription: 'ChatGPT requests permission to confirm which SIGUE account you connected. It cannot read your habits, routines, or progress.',
     writeDescription: 'ChatGPT requests permission to prepare custom habits for your SIGUE account. They will be created on your iPhone when you open the app. It cannot read your habits, routines, or progress.',
+    readDescription: 'ChatGPT requests permission to read a limited copy of your active habits and synced daily progress. SIGUE keeps the original data on your iPhone. It cannot read routines or detailed Health records.',
+    readWriteDescription: 'ChatGPT requests permission to read synced habits and daily progress, and prepare new habits that will be created when you open SIGUE on your iPhone. It cannot read routines or detailed Health records.',
     forgotTitle: 'Reset your password', forgotDescription: 'We will email a code to your SIGUE account.',
     resetTitle: 'Create a new password', resetDescription: 'Enter the code you received and your new password.',
     unavailableTitle: 'We could not continue the connection',
@@ -63,6 +69,8 @@ const copy = {
     allowButton: 'Authorize connection', denyButton: 'Cancel',
     privacyNote: 'This connection only identifies your SIGUE account. It cannot access your habits, routines, or progress.',
     writePrivacyNote: 'You allow new habits to be prepared. Your habits stay on your iPhone; ChatGPT can only check the status of its requests.',
+    readPrivacyNote: 'You allow access to active habits and daily results from the last year, with a sync timestamp. SIGUE remains the source of the original data.',
+    readWritePrivacyNote: 'You allow access to a limited copy of your habits and preparation of new habits. SIGUE keeps the original data on your iPhone.',
     homeLink: 'Explore SIGUE', account: 'SIGUE account',
     errors: {
       request: 'The ChatGPT request is invalid. Start the connection again from ChatGPT.',
@@ -126,15 +134,18 @@ function setLanguage(next) {
 function render() {
   const strings = copy[language];
   const grantsHabitWrite = activeScreen === 'consent' && Array.isArray(details?.scopes) && details.scopes.includes('habits:write');
+  const grantsHabitRead = activeScreen === 'consent' && Array.isArray(details?.scopes) && details.scopes.includes('habits:read');
   for (const screen of ['login', 'forgot', 'reset', 'consent']) $(`#${screen}`).hidden = screen !== activeScreen;
   const titles = { loading: strings.loadingTitle, login: strings.loginTitle, forgot: strings.forgotTitle, reset: strings.resetTitle,
     consent: strings.consentTitle, unavailable: strings.unavailableTitle };
   const descriptions = { loading: strings.loadingDescription, login: strings.loginDescription, forgot: strings.forgotDescription,
-    reset: strings.resetDescription, consent: grantsHabitWrite ? strings.writeDescription : strings.consentDescription,
+    reset: strings.resetDescription, consent: grantsHabitRead && grantsHabitWrite ? strings.readWriteDescription
+      : grantsHabitRead ? strings.readDescription : grantsHabitWrite ? strings.writeDescription : strings.consentDescription,
     unavailable: validUid ? strings.loadError : strings.unavailable };
   $('#title').textContent = titles[activeScreen];
   $('#description').textContent = descriptions[activeScreen];
-  $('#privacy-note').textContent = grantsHabitWrite ? strings.writePrivacyNote : strings.privacyNote;
+  $('#privacy-note').textContent = grantsHabitRead && grantsHabitWrite ? strings.readWritePrivacyNote
+    : grantsHabitRead ? strings.readPrivacyNote : grantsHabitWrite ? strings.writePrivacyNote : strings.privacyNote;
   const message = currentMessage ? strings.errors[currentMessage] : '';
   $('#message').textContent = message || '';
   $('#message').hidden = !message;
