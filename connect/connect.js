@@ -13,6 +13,7 @@ const copy = {
     loginDescription: 'Inicia sesión con una cuenta SIGUE existente para continuar.',
     consentTitle: 'Autorizar la conexión',
     consentDescription: 'ChatGPT solicita permiso para confirmar qué cuenta SIGUE has conectado. No podrá leer tus hábitos, rutinas ni progreso.',
+    writeDescription: 'ChatGPT solicita permiso para preparar hábitos personalizados en tu cuenta SIGUE. Se crearán en el iPhone cuando abras la app. No podrá leer tus hábitos, rutinas ni progreso.',
     forgotTitle: 'Recuperar contraseña', forgotDescription: 'Te enviaremos un código al correo de tu cuenta SIGUE.',
     resetTitle: 'Crear nueva contraseña', resetDescription: 'Introduce el código recibido y tu nueva contraseña.',
     unavailableTitle: 'No pudimos continuar la conexión',
@@ -24,6 +25,7 @@ const copy = {
     backToLogin: 'Volver a entrar', socialLabel: 'O entra con tu cuenta existente', appleButton: 'Continuar con Apple',
     allowButton: 'Autorizar conexión', denyButton: 'Cancelar',
     privacyNote: 'La conexión solo identifica tu cuenta SIGUE. No da acceso a tus hábitos, rutinas ni progreso.',
+    writePrivacyNote: 'Permites preparar hábitos nuevos. Tus hábitos permanecen en el iPhone y ChatGPT solo podrá consultar el estado de sus solicitudes.',
     homeLink: 'Conoce SIGUE', account: 'Cuenta SIGUE',
     errors: {
       request: 'La solicitud de ChatGPT no es válida. Inicia la conexión de nuevo desde ChatGPT.',
@@ -48,6 +50,7 @@ const copy = {
     loginDescription: 'Sign in with an existing SIGUE account to continue.',
     consentTitle: 'Authorize connection',
     consentDescription: 'ChatGPT requests permission to confirm which SIGUE account you connected. It cannot read your habits, routines, or progress.',
+    writeDescription: 'ChatGPT requests permission to prepare custom habits for your SIGUE account. They will be created on your iPhone when you open the app. It cannot read your habits, routines, or progress.',
     forgotTitle: 'Reset your password', forgotDescription: 'We will email a code to your SIGUE account.',
     resetTitle: 'Create a new password', resetDescription: 'Enter the code you received and your new password.',
     unavailableTitle: 'We could not continue the connection',
@@ -59,6 +62,7 @@ const copy = {
     backToLogin: 'Back to sign in', socialLabel: 'Or use your existing account', appleButton: 'Continue with Apple',
     allowButton: 'Authorize connection', denyButton: 'Cancel',
     privacyNote: 'This connection only identifies your SIGUE account. It cannot access your habits, routines, or progress.',
+    writePrivacyNote: 'You allow new habits to be prepared. Your habits stay on your iPhone; ChatGPT can only check the status of its requests.',
     homeLink: 'Explore SIGUE', account: 'SIGUE account',
     errors: {
       request: 'The ChatGPT request is invalid. Start the connection again from ChatGPT.',
@@ -121,14 +125,16 @@ function setLanguage(next) {
 
 function render() {
   const strings = copy[language];
+  const grantsHabitWrite = activeScreen === 'consent' && Array.isArray(details?.scopes) && details.scopes.includes('habits:write');
   for (const screen of ['login', 'forgot', 'reset', 'consent']) $(`#${screen}`).hidden = screen !== activeScreen;
   const titles = { loading: strings.loadingTitle, login: strings.loginTitle, forgot: strings.forgotTitle, reset: strings.resetTitle,
     consent: strings.consentTitle, unavailable: strings.unavailableTitle };
   const descriptions = { loading: strings.loadingDescription, login: strings.loginDescription, forgot: strings.forgotDescription,
-    reset: strings.resetDescription, consent: strings.consentDescription,
+    reset: strings.resetDescription, consent: grantsHabitWrite ? strings.writeDescription : strings.consentDescription,
     unavailable: validUid ? strings.loadError : strings.unavailable };
   $('#title').textContent = titles[activeScreen];
   $('#description').textContent = descriptions[activeScreen];
+  $('#privacy-note').textContent = grantsHabitWrite ? strings.writePrivacyNote : strings.privacyNote;
   const message = currentMessage ? strings.errors[currentMessage] : '';
   $('#message').textContent = message || '';
   $('#message').hidden = !message;
