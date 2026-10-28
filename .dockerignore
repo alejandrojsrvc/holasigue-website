@@ -2,3 +2,15 @@
 .gitignore
 README.md
 .nixpacks
+.github
+.agents
+.codex
+.opencode
+review-drafts
+**/.DS_Store
+.env
+.env.*
+*.key
+*.pem
+*.p8
+**/secrets/**
