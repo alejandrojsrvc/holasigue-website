@@ -354,3 +354,22 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .together-example { min-height: 380px; }
   .home-privacy { gap: 50px; }
 }
+
+/* Privacy uses the landing's type, palette and reading rhythm. */
+.privacy-page .page-hero h1 { font-size: clamp(2.8rem, 6vw, 5.9rem); line-height: 1.03; font-weight: 800; }
+.privacy-page .legal-content { min-width: 0; }
+.privacy-page .legal-content h2 { letter-spacing: -.03em; }
+.privacy-page .legal-content p, .privacy-page .legal-content li { max-width: 70ch; }
+.privacy-page .legal-content a { overflow-wrap: anywhere; }
+.legal-index { display: grid; gap: 4px; margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--line); }
+.legal-index a { width: fit-content; padding-block: 10px; font-size: .9rem; color: #4e586a; text-underline-offset: 4px; }
+.legal-index a:hover { color: var(--ink); text-decoration: underline; }
+.privacy-page :is(a, button):focus-visible { outline: 3px solid var(--exercise); outline-offset: 4px; }
+.privacy-page ::selection { background: var(--yellow); color: var(--ink); }
+@media (max-width: 900px) {
+  .privacy-page .legal-layout { gap: 36px; }
+  .legal-index { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html:has(.privacy-page), html:has(.connect-page) { scroll-behavior: auto; }
+}

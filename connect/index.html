@@ -11,36 +11,49 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
   <link rel="stylesheet" href="/connect/connect.css">
   <script src="/connect/connect.js" defer></script>
 </head>
-<body>
-  <main class="connect-shell">
+<body class="connect-page">
+  <a class="skip-link" id="skip-link" href="#title">Saltar al contenido</a>
+  <header class="connect-header shell">
     <a class="brand" href="/es" id="brand" aria-label="SIGUE, inicio"><img src="/assets/sigue-icon.png" alt="" width="48" height="48"><span>SIGUE</span></a>
     <div class="language" role="group" aria-label="Language / Idioma">
       <button type="button" data-language="es">ES</button><span aria-hidden="true">/</span><button type="button" data-language="en">EN</button>
     </div>
+  </header>
+  <main class="connect-shell shell">
+    <div class="connect-intro">
+      <p class="connect-statement" id="intro-title">Tus hábitos, también en la conversación.</p>
+      <p class="connect-summary" id="intro-description">Conecta tu cuenta SIGUE para consultar tu progreso y preparar cambios desde ChatGPT.</p>
+      <ul class="connect-principles">
+        <li id="principle-permissions">Tú decides qué permisos conceder.</li>
+        <li id="principle-control">SIGUE valida y aplica los cambios en tu iPhone.</li>
+        <li id="principle-revoke">Puedes revocar la conexión desde SIGUE.</li>
+      </ul>
+    </div>
     <section class="connect-card" aria-labelledby="title">
-      <p class="eyebrow" id="eyebrow">CONEXIÓN SEGURA</p>
       <h1 id="title">Conectar SIGUE con ChatGPT</h1>
       <p class="lead" id="description" role="status">Estamos preparando la conexión.</p>
       <p class="message" id="message" role="alert" hidden></p>
 
       <div id="login" hidden>
+        <div class="social" id="social" hidden>
+          <button id="apple-button" type="button" disabled hidden>Continuar con Apple</button>
+          <div id="google-button" hidden></div>
+        </div>
+        <p class="divider" id="email-divider" hidden>O entra con tu correo de SIGUE</p>
         <form id="email-form" method="post">
           <input type="hidden" name="csrf" class="csrf">
           <label for="email" id="email-label">Correo electrónico</label>
           <input id="email" name="email" type="email" autocomplete="username" required maxlength="254">
           <label for="password" id="password-label">Contraseña</label>
-          <input id="password" name="password" type="password" autocomplete="current-password" required>
+          <input id="password" name="password" type="password" autocomplete="current-password" required aria-describedby="login-help">
           <button class="primary" id="email-button" type="submit">Entrar en SIGUE</button>
         </form>
         <button class="text-button" id="forgot-link" type="button">¿Olvidaste tu contraseña?</button>
-        <div class="social" id="social" hidden>
-          <p id="social-label">O entra con tu cuenta existente</p>
-          <div id="google-button"></div>
-          <button id="apple-button" type="button" hidden>Continuar con Apple</button>
-        </div>
+        <p class="login-help" id="login-help">Usa el mismo método con el que entras en tu cuenta SIGUE. Después podrás revisar los permisos antes de autorizar.</p>
         <form id="google-form" method="post" hidden><input type="hidden" name="csrf" class="csrf"><input type="hidden" name="credential"></form>
         <form id="apple-form" method="post" hidden><input type="hidden" name="csrf" class="csrf"><input type="hidden" name="state"><input type="hidden" name="identityToken"></form>
       </div>
@@ -61,7 +74,7 @@
           <label for="reset-email" id="reset-email-label">Correo electrónico</label>
           <input id="reset-email" name="email" type="email" autocomplete="email" required maxlength="254">
           <label for="code" id="code-label">Código de 6 cifras</label>
-          <input id="code" name="code" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" required>
+          <input id="code" name="code" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" maxlength="6" required>
           <label for="new-password" id="new-password-label">Nueva contraseña (12 caracteres como mínimo)</label>
           <input id="new-password" name="newPassword" type="password" autocomplete="new-password" minlength="12" maxlength="128" required>
           <button class="primary" id="reset-button" type="submit">Cambiar contraseña</button>
@@ -71,15 +84,22 @@
 
       <div id="consent" hidden>
         <p class="account" id="account"></p>
+        <h2 id="permissions-title">Permisos solicitados</h2>
+        <ul class="permissions" id="permissions"></ul>
+        <p class="consent-help" id="consent-help">Puedes cancelar ahora o revocar la conexión más tarde desde SIGUE.</p>
         <form id="consent-form" method="post">
           <input type="hidden" name="csrf" class="csrf">
           <button class="primary" type="submit" name="decision" value="allow" id="allow-button">Autorizar conexión</button>
           <button class="secondary" type="submit" name="decision" value="deny" id="deny-button">Cancelar</button>
         </form>
       </div>
-      <p class="foot" id="privacy-note">La conexión solo identifica tu cuenta SIGUE. No da acceso a tus hábitos, rutinas ni progreso.</p>
+      <p class="foot" id="privacy-note">Tus datos originales permanecen en el iPhone.</p>
+      <a class="privacy-link" id="privacy-link" href="/privacidad">Consulta cómo tratamos tus datos</a>
     </section>
-    <a class="home-link" id="home-link" href="/es">Conoce SIGUE</a>
   </main>
+  <footer class="connect-footer shell">
+    <a class="home-link" id="home-link" href="/es">Conoce SIGUE</a>
+    <a id="terms-link" href="/terminos">Términos de uso</a>
+  </footer>
 </body>
 </html>

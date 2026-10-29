@@ -11,6 +11,9 @@
   <link rel="alternate" hreflang="es" href="https://holasigue.com/privacidad">
   <link rel="alternate" hreflang="en" href="https://holasigue.com/en/privacy">
   <link rel="icon" href="assets/sigue-icon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_ES">
@@ -19,7 +22,7 @@
   <meta property="og:description" content="Tus datos, tus permisos y las decisiones de privacidad de SIGUE.">
   <meta property="og:url" content="https://holasigue.com/privacidad">
 </head>
-<body data-language="es">
+<body class="privacy-page" data-language="es">
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
   <header class="site-header" data-header>
     <div class="shell header-inner">
@@ -46,18 +49,18 @@
     <div class="legal-layout shell">
       <aside class="legal-aside" aria-label="Información del documento">
         <p>Última actualización</p>
-        <strong>28 de septiembre de 2026</strong>
-      </aside>
+        <strong>29 de octubre de 2026</strong>
+      <nav class="legal-index" aria-label="En esta página"><a href="#summary">Resumen</a><a href="#device">En tu dispositivo</a><a href="#health">Salud y permisos</a><a href="#account">Cuenta SIGUE</a><a href="#chatgpt">ChatGPT (MCP)</a><a href="#website">Sitio web</a><a href="#deletion">Eliminación y control</a><a href="#contact">Contacto</a></nav></aside>
 
       <article class="legal-content">
-        <section>
+        <section id="summary">
           <h2>Resumen</h2>
           <div class="notice">
-            Las funciones personales de SIGUE funcionan sin cuenta y guardan tus registros en el dispositivo y, si está activo, en tu iCloud privado. Si usas Juntos, se crea una cuenta SIGUE y se envían al servidor los datos que eliges compartir en grupos.
+            Las funciones personales de SIGUE funcionan sin cuenta y guardan tus registros en el dispositivo y, si está activo, en tu iCloud privado. Si usas Juntos, se crea una cuenta SIGUE y se envían al servidor los datos que eliges compartir en grupos. Si autorizas la conexión opcional con ChatGPT, SIGUE también guarda copias temporales limitadas para las consultas autorizadas y procesa los cambios que solicites mediante esa conexión, como se explica en la sección 6.
           </div>
         </section>
 
-        <section>
+        <section id="device">
           <h2>1. Información guardada en el dispositivo</h2>
           <p>SIGUE puede guardar localmente la información que introduces o configuras, incluyendo:</p>
           <ul>
@@ -71,59 +74,68 @@
           <p>Esta información se utiliza para ofrecer las funciones de la aplicación y personalizar tu experiencia en el dispositivo.</p>
         </section>
 
-        <section>
+        <section id="health">
           <h2>2. Apple Salud</h2>
           <p>Si decides conectar Apple Salud, SIGUE puede solicitar permiso para leer pasos, distancia caminando o corriendo, tiempo de ejercicio, sueño y entrenamientos. Estos datos se usan para presentar tu progreso y evitar que tengas que registrar dos veces una actividad.</p>
           <p>La conexión es opcional. SIGUE no escribe información en Apple Salud. Puedes revisar o retirar los permisos desde la aplicación Salud o desde Ajustes en cualquier momento.</p>
         </section>
 
-        <section>
+        <section id="motion">
           <h2>3. Movimiento y Fitness</h2>
           <p>Cuando inicias expresamente una sesión de movimiento, SIGUE puede utilizar Movimiento y Fitness del iPhone para contar los pasos realizados durante esa sesión. La aplicación no inicia sesiones en segundo plano sin tu acción.</p>
         </section>
 
-        <section>
+        <section id="notifications">
           <h2>4. Widgets, Live Activities y notificaciones</h2>
           <p>El widget recibe un resumen limitado de tu base diaria mediante un grupo privado compartido entre SIGUE y su extensión. Las Live Activities muestran temporalmente el estado de sesiones que tú inicias. Las notificaciones se programan en el dispositivo conforme a tus preferencias.</p>
         </section>
 
-        <section>
+        <section id="account">
           <h2>5. Cuenta SIGUE y funciones Juntos</h2>
-          <p>Juntos es opcional y requiere iniciar sesión con Apple. Para prestar esta función, Alejandro Sojo (SIGUE) trata un identificador de Apple, tu nombre visible, datos de sesión y los grupos y desafíos a los que te unes. En un desafío se guardan el progreso que envías, la fecha, el valor que eliges compartir y, cuando corresponde, la duración que registras.</p>
+          <p>Juntos es opcional y requiere una cuenta SIGUE. Según el método de acceso habilitado, puedes utilizar Apple, Google o correo y contraseña. Alejandro Sojo (SIGUE) trata los identificadores del proveedor, el correo cuando corresponde, las credenciales protegidas, tu nombre visible, datos de sesión y los grupos y desafíos a los que te unes. En un desafío se guardan el progreso que envías, la fecha, el valor que eliges compartir y, cuando corresponde, la duración que registras.</p>
           <p>Las personas de tu grupo pueden ver tu nombre visible y el progreso del desafío compartido. No enviamos automáticamente tus hábitos personales, registros de Apple Salud ni muestras de salud a Juntos. No usamos estos datos para publicidad ni los vendemos.</p>
           <p>El servidor de Juntos está alojado en Estados Unidos. La transmisión entre la app y el servidor usa HTTPS; el token de Apple que necesitamos para revocar el acceso al borrar la cuenta se guarda cifrado. El proveedor de alojamiento puede procesar datos técnicos de conexión para operar y proteger el servicio.</p>
         </section>
 
-        <section>
-          <h2>6. Datos que no recopilamos</h2>
-          <p>SIGUE no usa publicidad, rastreo publicitario ni SDKs de analítica de terceros. Las funciones personales no requieren una cuenta. Los datos de Salud se leen en el dispositivo con tu permiso y no se envían al servidor de Juntos.</p>
+        <section id="chatgpt">
+          <h2>6. Conexión opcional con ChatGPT</h2>
+          <p>Conectar SIGUE con ChatGPT, un servicio de OpenAI, es opcional y requiere tu autorización. Según los permisos concedidos, SIGUE comparte con ChatGPT información de tu cuenta, hábitos y progreso, planes de Rutina y resúmenes de sesiones terminadas para responder a tus consultas. Estos datos pueden incluir nombres, objetivos, horarios y métricas de actividad o descanso, incluidos resúmenes derivados de Apple Salud. No se comparten muestras detalladas de Salud, frecuencia cardíaca, notas ni rutas GPS.</p>
+          <p>Si autorizas cambios, SIGUE recibe y guarda las solicitudes realizadas desde ChatGPT para validarlas y aplicarlas en tu dispositivo. No se requiere necesariamente una confirmación manual para cada cambio.</p>
+          <p>SIGUE mantiene copias temporales para las consultas, que vencen a los siete días desde su última actualización y se eliminan mediante limpieza periódica. Las solicitudes pendientes vencen a los siete días; los registros de solicitudes que ya no están pendientes se eliminan mediante limpieza periódica transcurridos 30 días desde su creación. Los datos eliminados pueden persistir temporalmente en copias de seguridad hasta su rotación.</p>
+          <p>OpenAI trata la información recibida conforme a sus <a href="https://openai.com/policies/terms-of-use/">condiciones</a> y su <a href="https://openai.com/policies/privacy-policy/">política de privacidad</a>, lo que puede implicar tratamiento fuera de tu país. Su conservación y posible uso para mejorar modelos dependen del producto, plan y controles de datos de tu cuenta de ChatGPT.</p>
+          <p>Puedes retirar el acceso con <strong>Desconectar ChatGPT</strong> en SIGUE. Esto revoca la autorización, elimina las copias de consulta de la base principal y marca como vencidas las solicitudes pendientes; no deshace cambios ya aplicados. Desconectar o eliminar tu cuenta SIGUE no borra las conversaciones de ChatGPT: debes gestionarlas mediante los controles de OpenAI o su <a href="https://privacy.openai.com/">portal de privacidad</a>. Para solicitudes sobre tus datos en SIGUE, escribe a <a href="mailto:privacidad@holasigue.com">privacidad@holasigue.com</a>.</p>
         </section>
 
-        <section>
-          <h2>7. Sitio web</h2>
-          <p>holasigue.com no utiliza cookies publicitarias ni herramientas de analítica de terceros. El proveedor de alojamiento puede procesar datos técnicos indispensables, como la dirección IP y registros de seguridad, conforme a sus propias obligaciones y políticas.</p>
+        <section id="collection">
+          <h2>7. Datos que no recopilamos</h2>
+          <p>SIGUE no usa publicidad, rastreo publicitario ni SDKs de analítica de terceros. Las funciones personales no requieren una cuenta. Las muestras detalladas de Apple Salud se leen en el dispositivo con tu permiso. Si autorizas la conexión con ChatGPT, pueden compartirse los resúmenes derivados descritos en la sección 6.</p>
         </section>
 
-        <section>
-          <h2>8. Eliminación y control</h2>
-          <p>Para borrar tu cuenta de Juntos, abre SIGUE &gt; Perfil &gt; Cuenta SIGUE &gt; Eliminar cuenta y confirma. Se revocan tus sesiones y se eliminan de inmediato tu perfil, membresías, progreso y los grupos que administras con su historial compartido. Conservamos temporalmente la credencial cifrada de Apple y un identificador técnico mínimo para completar y reintentar la revocación; después se borran. Si no puedes acceder a la app, escribe a <a href="mailto:privacidad@holasigue.com">privacidad@holasigue.com</a>.</p>
+        <section id="website">
+          <h2>8. Sitio web</h2>
+          <p>holasigue.com no utiliza cookies publicitarias ni herramientas de analítica de terceros. La conexión con ChatGPT utiliza cookies técnicas para gestionar la sesión de autorización. La web guarda la preferencia de idioma en el navegador y carga Figtree desde Google Fonts; si utilizas el acceso con Google o Apple, carga también los servicios de identidad del proveedor correspondiente. Estas conexiones permiten al proveedor recibir datos técnicos como tu dirección IP e información del navegador. El proveedor de alojamiento puede procesar datos técnicos indispensables, como la dirección IP y registros de seguridad, conforme a sus propias obligaciones y políticas.</p>
+        </section>
+
+        <section id="deletion">
+          <h2>9. Eliminación y control</h2>
+          <p>Puedes solicitar la eliminación de tu cuenta desde SIGUE &gt; Perfil &gt; Cuenta SIGUE &gt; Eliminar cuenta. Si administras grupos o desafíos, tendrás que elegir su transferencia o eliminación. En cuentas vinculadas a Apple, el proceso requiere revocar la credencial de Apple; si falla, la eliminación puede no completarse y deberás reintentar. Cuando la solicitud termina correctamente, se eliminan la cuenta y los datos relacionados, incluida la foto de perfil, las autorizaciones de ChatGPT, sus copias de consulta y los registros de acciones remotas. Si no puedes acceder a la app, escribe a <a href="mailto:privacidad@holasigue.com">privacidad@holasigue.com</a>.</p>
           <p>Los datos eliminados de la base principal podrían persistir temporalmente en copias de seguridad hasta su rotación. Las solicitudes de acceso, corrección o eliminación pueden enviarse al mismo contacto.</p>
           <p>Eliminar la app del dispositivo no elimina la cuenta Juntos ni los datos del servidor. Tampoco elimina los datos locales que sincroniza tu cuenta privada de iCloud. Los datos originales de Apple Salud se gestionan desde la app Salud.</p>
           <p>Puedes retirar permisos de Salud, Movimiento, notificaciones y Live Activities desde iOS. Atenderemos las solicitudes de acceso, corrección o eliminación conforme a la normativa aplicable.</p>
         </section>
 
-        <section>
-          <h2>9. Bienestar, no atención médica</h2>
+        <section id="wellbeing">
+          <h2>10. Bienestar, no atención médica</h2>
           <p>SIGUE es una herramienta general de bienestar y evolución personal. No ofrece diagnósticos, tratamientos ni recomendaciones médicas y no sustituye la atención de profesionales sanitarios.</p>
         </section>
 
-        <section>
-          <h2>10. Cambios en esta política</h2>
+        <section id="changes">
+          <h2>11. Cambios en esta política</h2>
           <p>Podemos actualizar esta política cuando cambien las funciones de SIGUE o los requisitos aplicables. Publicaremos la versión vigente en esta página e indicaremos la fecha de la última actualización.</p>
         </section>
 
-        <section>
-          <h2>11. Responsable y contacto</h2>
+        <section id="contact">
+          <h2>12. Responsable y contacto</h2>
           <p>El responsable de SIGUE es Alejandro Sojo, contacto de privacidad: <a href="mailto:privacidad@holasigue.com">privacidad@holasigue.com</a>. Para preguntas o solicitudes relacionadas con tus datos, escribe a esa dirección. La normativa concreta aplicable depende, entre otros factores, de tu ubicación y de la del responsable.</p>
         </section>
       </article>
