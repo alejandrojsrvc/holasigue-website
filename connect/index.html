@@ -21,12 +21,16 @@
       <button type="button" data-language="es">ES</button><span aria-hidden="true">/</span><button type="button" data-language="en">EN</button>
     </div>
     <section class="connect-card" aria-labelledby="title">
-      <p class="eyebrow" id="eyebrow">CONEXIÓN SEGURA</p>
       <h1 id="title">Conectar SIGUE con ChatGPT</h1>
       <p class="lead" id="description" role="status">Estamos preparando la conexión.</p>
       <p class="message" id="message" role="alert" hidden></p>
 
       <div id="login" hidden>
+        <div class="social" id="social" hidden>
+          <button id="apple-button" type="button" disabled hidden>Continuar con Apple</button>
+          <div id="google-button" hidden></div>
+        </div>
+        <p class="divider" id="email-divider" hidden>O entra con tu correo de SIGUE</p>
         <form id="email-form" method="post">
           <input type="hidden" name="csrf" class="csrf">
           <label for="email" id="email-label">Correo electrónico</label>
@@ -36,11 +40,7 @@
           <button class="primary" id="email-button" type="submit">Entrar en SIGUE</button>
         </form>
         <button class="text-button" id="forgot-link" type="button">¿Olvidaste tu contraseña?</button>
-        <div class="social" id="social" hidden>
-          <p id="social-label">O entra con tu cuenta existente</p>
-          <div id="google-button"></div>
-          <button id="apple-button" type="button" hidden>Continuar con Apple</button>
-        </div>
+        <p class="login-help" id="login-help">Usa el mismo método con el que entras en tu cuenta SIGUE. Después podrás revisar los permisos antes de autorizar.</p>
         <form id="google-form" method="post" hidden><input type="hidden" name="csrf" class="csrf"><input type="hidden" name="credential"></form>
         <form id="apple-form" method="post" hidden><input type="hidden" name="csrf" class="csrf"><input type="hidden" name="state"><input type="hidden" name="identityToken"></form>
       </div>
@@ -71,13 +71,17 @@
 
       <div id="consent" hidden>
         <p class="account" id="account"></p>
+        <h2 id="permissions-title">Permisos solicitados</h2>
+        <ul class="permissions" id="permissions"></ul>
+        <p class="consent-help" id="consent-help">Puedes cancelar ahora o revocar la conexión más tarde desde SIGUE.</p>
         <form id="consent-form" method="post">
           <input type="hidden" name="csrf" class="csrf">
           <button class="primary" type="submit" name="decision" value="allow" id="allow-button">Autorizar conexión</button>
           <button class="secondary" type="submit" name="decision" value="deny" id="deny-button">Cancelar</button>
         </form>
       </div>
-      <p class="foot" id="privacy-note">La conexión solo identifica tu cuenta SIGUE. No da acceso a tus hábitos, rutinas ni progreso.</p>
+      <p class="foot" id="privacy-note">Tus datos originales permanecen en el iPhone.</p>
+      <a class="privacy-link" id="privacy-link" href="/privacidad.html">Consulta cómo tratamos tus datos</a>
     </section>
     <a class="home-link" id="home-link" href="/es">Conoce SIGUE</a>
   </main>

@@ -8,14 +8,19 @@ const $ = (selector) => document.querySelector(selector);
 
 const copy = {
   es: {
-    page: 'Conectar con SIGUE', eyebrow: 'CONEXIÓN SEGURA', loadingTitle: 'Conectar SIGUE con ChatGPT',
+    page: 'Conectar con SIGUE', loadingTitle: 'Conectar SIGUE con ChatGPT',
     loadingDescription: 'Estamos preparando la conexión.', loginTitle: 'Conectar SIGUE con ChatGPT',
-    loginDescription: 'Inicia sesión con una cuenta SIGUE existente para continuar.',
+    loginDescription: 'Entra con tu cuenta SIGUE para conectar ChatGPT.',
     consentTitle: 'Autorizar la conexión',
-    consentDescription: 'ChatGPT solicita permiso para confirmar qué cuenta SIGUE has conectado. No podrá leer tus hábitos, rutinas ni progreso.',
-    writeDescription: 'ChatGPT solicita permiso para preparar hábitos personalizados en tu cuenta SIGUE. Se crearán en el iPhone cuando abras la app. No podrá leer tus hábitos, rutinas ni progreso.',
-    readDescription: 'ChatGPT solicita permiso para consultar una copia limitada de tus hábitos activos y su progreso diario sincronizado. SIGUE conserva los datos originales en tu iPhone. No podrá leer rutinas ni registros detallados de Salud.',
-    readWriteDescription: 'ChatGPT solicita permiso para consultar hábitos y progreso diario sincronizados, y preparar hábitos nuevos que se crearán cuando abras SIGUE en el iPhone. No podrá leer rutinas ni registros detallados de Salud.',
+    consentDescription: 'Revisa lo que ChatGPT podrá consultar o preparar en tu cuenta.',
+    scopeDescriptions: {
+      'profile:read': 'Confirmar qué cuenta SIGUE has conectado.',
+      'habits:read': 'Consultar una copia temporal de tus hábitos y resultados diarios del último año.',
+      'habits:write': 'Preparar hábitos nuevos y registros de progreso para que SIGUE los aplique en el iPhone.',
+      'routine:read': 'Consultar una copia temporal de tus planes y sus resultados.',
+      'routine:write': 'Preparar cambios de Rutina para que SIGUE los valide y aplique en el iPhone.',
+      'sessions:read': 'Consultar sesiones terminadas de los últimos 90 días: duración, pasos, distancia, velocidad, desnivel, esfuerzo y series y pesos de gimnasio cuando estén disponibles.',
+    },
     forgotTitle: 'Recuperar contraseña', forgotDescription: 'Te enviaremos un código al correo de tu cuenta SIGUE.',
     resetTitle: 'Crear nueva contraseña', resetDescription: 'Introduce el código recibido y tu nueva contraseña.',
     unavailableTitle: 'No pudimos continuar la conexión',
@@ -24,12 +29,12 @@ const copy = {
     emailLabel: 'Correo electrónico', passwordLabel: 'Contraseña', emailButton: 'Entrar en SIGUE',
     forgotLink: '¿Olvidaste tu contraseña?', forgotButton: 'Enviar código', codeLabel: 'Código de 6 cifras',
     newPasswordLabel: 'Nueva contraseña (12 caracteres como mínimo)', resetButton: 'Cambiar contraseña',
-    backToLogin: 'Volver a entrar', socialLabel: 'O entra con tu cuenta existente', appleButton: 'Continuar con Apple',
+    backToLogin: 'Volver a entrar', emailDivider: 'O entra con tu correo de SIGUE', appleButton: 'Continuar con Apple',
+    loginHelp: 'Usa el mismo método con el que entras en SIGUE. Podrás revisar los permisos antes de autorizar.',
+    permissionsTitle: 'Permisos solicitados', consentHelp: 'Puedes cancelar ahora o revocar la conexión más tarde desde SIGUE.',
+    privacyLink: 'Consulta cómo tratamos tus datos',
     allowButton: 'Autorizar conexión', denyButton: 'Cancelar',
-    privacyNote: 'La conexión solo identifica tu cuenta SIGUE. No da acceso a tus hábitos, rutinas ni progreso.',
-    writePrivacyNote: 'Permites preparar hábitos nuevos. Tus hábitos permanecen en el iPhone y ChatGPT solo podrá consultar el estado de sus solicitudes.',
-    readPrivacyNote: 'Permites consultar hábitos activos y resultados diarios del último año, con fecha de sincronización. SIGUE sigue siendo la fuente de datos original.',
-    readWritePrivacyNote: 'Permites consultar una copia limitada de tus hábitos y preparar hábitos nuevos. SIGUE conserva los datos originales en el iPhone.',
+    privacyNote: 'Tus datos originales permanecen en el iPhone. Las copias de consulta vencen a los 7 días; no incluyen notas, rutas GPS ni muestras detalladas de Salud. ChatGPT no puede crear ni iniciar sesiones.',
     homeLink: 'Conoce SIGUE', account: 'Cuenta SIGUE',
     errors: {
       request: 'La solicitud de ChatGPT no es válida. Inicia la conexión de nuevo desde ChatGPT.',
@@ -49,14 +54,19 @@ const copy = {
     },
   },
   en: {
-    page: 'Connect with SIGUE', eyebrow: 'SECURE CONNECTION', loadingTitle: 'Connect SIGUE to ChatGPT',
+    page: 'Connect with SIGUE', loadingTitle: 'Connect SIGUE to ChatGPT',
     loadingDescription: 'Preparing your connection.', loginTitle: 'Connect SIGUE to ChatGPT',
-    loginDescription: 'Sign in with an existing SIGUE account to continue.',
+    loginDescription: 'Sign in to your SIGUE account to connect ChatGPT.',
     consentTitle: 'Authorize connection',
-    consentDescription: 'ChatGPT requests permission to confirm which SIGUE account you connected. It cannot read your habits, routines, or progress.',
-    writeDescription: 'ChatGPT requests permission to prepare custom habits for your SIGUE account. They will be created on your iPhone when you open the app. It cannot read your habits, routines, or progress.',
-    readDescription: 'ChatGPT requests permission to read a limited copy of your active habits and synced daily progress. SIGUE keeps the original data on your iPhone. It cannot read routines or detailed Health records.',
-    readWriteDescription: 'ChatGPT requests permission to read synced habits and daily progress, and prepare new habits that will be created when you open SIGUE on your iPhone. It cannot read routines or detailed Health records.',
+    consentDescription: 'Review what ChatGPT can read or prepare in your account.',
+    scopeDescriptions: {
+      'profile:read': 'Confirm which SIGUE account you connected.',
+      'habits:read': 'Read a temporary copy of your habits and daily results from the last year.',
+      'habits:write': 'Prepare new habits and progress records for SIGUE to apply on your iPhone.',
+      'routine:read': 'Read a temporary copy of your plans and their results.',
+      'routine:write': 'Prepare Routine changes for SIGUE to validate and apply on your iPhone.',
+      'sessions:read': 'Read completed sessions from the last 90 days: duration, steps, distance, speed, elevation change, effort, and gym sets and weights when available.',
+    },
     forgotTitle: 'Reset your password', forgotDescription: 'We will email a code to your SIGUE account.',
     resetTitle: 'Create a new password', resetDescription: 'Enter the code you received and your new password.',
     unavailableTitle: 'We could not continue the connection',
@@ -65,12 +75,12 @@ const copy = {
     emailLabel: 'Email address', passwordLabel: 'Password', emailButton: 'Sign in to SIGUE',
     forgotLink: 'Forgot your password?', forgotButton: 'Send code', codeLabel: '6-digit code',
     newPasswordLabel: 'New password (at least 12 characters)', resetButton: 'Change password',
-    backToLogin: 'Back to sign in', socialLabel: 'Or use your existing account', appleButton: 'Continue with Apple',
+    backToLogin: 'Back to sign in', emailDivider: 'Or sign in with your SIGUE email', appleButton: 'Continue with Apple',
+    loginHelp: 'Use the same sign-in method you use in SIGUE. You can review permissions before allowing access.',
+    permissionsTitle: 'Requested permissions', consentHelp: 'You can cancel now or revoke the connection later in SIGUE.',
+    privacyLink: 'See how we handle your data',
     allowButton: 'Authorize connection', denyButton: 'Cancel',
-    privacyNote: 'This connection only identifies your SIGUE account. It cannot access your habits, routines, or progress.',
-    writePrivacyNote: 'You allow new habits to be prepared. Your habits stay on your iPhone; ChatGPT can only check the status of its requests.',
-    readPrivacyNote: 'You allow access to active habits and daily results from the last year, with a sync timestamp. SIGUE remains the source of the original data.',
-    readWritePrivacyNote: 'You allow access to a limited copy of your habits and preparation of new habits. SIGUE keeps the original data on your iPhone.',
+    privacyNote: 'Your original data stays on your iPhone. Read copies expire after 7 days and exclude notes, GPS routes and detailed Health samples. ChatGPT cannot create or start sessions.',
     homeLink: 'Explore SIGUE', account: 'SIGUE account',
     errors: {
       request: 'The ChatGPT request is invalid. Start the connection again from ChatGPT.',
@@ -107,7 +117,6 @@ function setLanguage(next) {
   document.documentElement.lang = next;
   const strings = copy[next];
   document.title = `${strings.page} · SIGUE`;
-  $('#eyebrow').textContent = strings.eyebrow;
   $('#email-label').textContent = $('#forgot-email-label').textContent = $('#reset-email-label').textContent = strings.emailLabel;
   $('#password-label').textContent = strings.passwordLabel;
   $('#email-button').textContent = strings.emailButton;
@@ -116,7 +125,12 @@ function setLanguage(next) {
   $('#code-label').textContent = strings.codeLabel;
   $('#new-password-label').textContent = strings.newPasswordLabel;
   $('#reset-button').textContent = strings.resetButton;
-  $('#social-label').textContent = strings.socialLabel;
+  $('#email-divider').textContent = strings.emailDivider;
+  $('#login-help').textContent = strings.loginHelp;
+  $('#permissions-title').textContent = strings.permissionsTitle;
+  $('#consent-help').textContent = strings.consentHelp;
+  $('#privacy-link').textContent = strings.privacyLink;
+  $('#privacy-link').href = next === 'es' ? '/privacidad.html' : '/en/privacy.html';
   $('#apple-button').textContent = strings.appleButton;
   $('#allow-button').textContent = strings.allowButton;
   $('#deny-button').textContent = strings.denyButton;
@@ -133,26 +147,27 @@ function setLanguage(next) {
 
 function render() {
   const strings = copy[language];
-  const grantsHabitWrite = activeScreen === 'consent' && Array.isArray(details?.scopes) && details.scopes.includes('habits:write');
-  const grantsHabitRead = activeScreen === 'consent' && Array.isArray(details?.scopes) && details.scopes.includes('habits:read');
+  const grantedScopes = activeScreen === 'consent' && Array.isArray(details?.scopes) ? details.scopes : [];
   for (const screen of ['login', 'forgot', 'reset', 'consent']) $(`#${screen}`).hidden = screen !== activeScreen;
   const titles = { loading: strings.loadingTitle, login: strings.loginTitle, forgot: strings.forgotTitle, reset: strings.resetTitle,
     consent: strings.consentTitle, unavailable: strings.unavailableTitle };
   const descriptions = { loading: strings.loadingDescription, login: strings.loginDescription, forgot: strings.forgotDescription,
-    reset: strings.resetDescription, consent: grantsHabitRead && grantsHabitWrite ? strings.readWriteDescription
-      : grantsHabitRead ? strings.readDescription : grantsHabitWrite ? strings.writeDescription : strings.consentDescription,
+    reset: strings.resetDescription, consent: strings.consentDescription,
     unavailable: validUid ? strings.loadError : strings.unavailable };
   $('#title').textContent = titles[activeScreen];
   $('#description').textContent = descriptions[activeScreen];
-  $('#privacy-note').textContent = grantsHabitRead && grantsHabitWrite ? strings.readWritePrivacyNote
-    : grantsHabitRead ? strings.readPrivacyNote : grantsHabitWrite ? strings.writePrivacyNote : strings.privacyNote;
+  $('#privacy-note').textContent = strings.privacyNote;
+  $('#permissions').replaceChildren(...grantedScopes.filter((scope) => strings.scopeDescriptions[scope]).map((scope) => {
+    const item = document.createElement('li');
+    item.textContent = strings.scopeDescriptions[scope];
+    return item;
+  }));
   const message = currentMessage ? strings.errors[currentMessage] : '';
   $('#message').textContent = message || '';
   $('#message').hidden = !message;
   if (activeScreen === 'consent' && details) {
     const name = details.displayName || strings.account;
-    const suffix = typeof details.accountId === 'string' ? details.accountId.slice(0, 8) : '';
-    $('#account').textContent = suffix ? `${name} · ${suffix}` : name;
+    $('#account').textContent = details.displayName ? `${strings.account}: ${name}` : name;
   }
 }
 
@@ -167,6 +182,12 @@ function submitIdentity(form, field, value) {
   form.submit();
 }
 
+function updateSocialVisibility() {
+  const available = !$('#apple-button').hidden || !$('#google-button').hidden;
+  $('#social').hidden = !available;
+  $('#email-divider').hidden = !available;
+}
+
 function loadGoogle(clientId) {
   window.sigueGoogle = (result) => {
     if (typeof result.credential === 'string') submitIdentity($('#google-form'), 'credential', result.credential);
@@ -175,30 +196,46 @@ function loadGoogle(clientId) {
   script.src = 'https://accounts.google.com/gsi/client';
   script.async = true;
   script.onload = () => {
-    window.google.accounts.id.initialize({ client_id: clientId, callback: window.sigueGoogle, ux_mode: 'popup' });
-    window.google.accounts.id.renderButton($('#google-button'), { theme: 'outline', size: 'large', text: 'signin_with' });
+    try {
+      $('#google-button').hidden = false;
+      updateSocialVisibility();
+      window.google.accounts.id.initialize({ client_id: clientId, callback: window.sigueGoogle, ux_mode: 'popup' });
+      window.google.accounts.id.renderButton($('#google-button'), {
+        theme: 'outline', size: 'large', text: 'signin_with', width: Math.min($('#google-button').clientWidth, 400),
+      });
+    } catch { $('#google-button').hidden = true; updateSocialVisibility(); }
   };
+  script.onerror = () => { $('#google-button').hidden = true; updateSocialVisibility(); };
   document.head.append(script);
 }
 
 function loadApple(info) {
   const button = $('#apple-button');
   button.hidden = false;
+  updateSocialVisibility();
   const script = document.createElement('script');
   script.src = 'https://appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/en_US/appleid.auth.js';
   script.onload = () => {
-    window.AppleID.auth.init({ clientId: info.appleClientId, scope: 'name email', redirectURI: info.appleRedirectUri,
-      state: info.appleState, nonce: info.appleNonce, usePopup: true });
+    try {
+      window.AppleID.auth.init({ clientId: info.appleClientId, redirectURI: info.appleRedirectUri,
+        state: info.appleState, nonce: info.appleNonce, usePopup: true });
+    } catch { button.hidden = true; updateSocialVisibility(); return; }
+    button.disabled = false;
     button.addEventListener('click', async () => {
+      button.disabled = true;
       try {
         const result = await window.AppleID.auth.signIn();
-        if (result.authorization?.id_token) {
+        if (result.authorization?.id_token && result.authorization?.state === info.appleState) {
           $('#apple-form').elements.state.value = info.csrf;
           submitIdentity($('#apple-form'), 'identityToken', result.authorization.id_token);
+          return;
         }
+        show('login', 'login_failed');
       } catch { show('login', 'login_failed'); }
+      finally { button.disabled = false; }
     });
   };
+  script.onerror = () => { button.hidden = true; updateSocialVisibility(); };
   document.head.append(script);
 }
 
@@ -230,7 +267,6 @@ if (validUid) {
         show('consent');
         return;
       }
-      if (payload.googleClientId || payload.appleClientId) $('#social').hidden = false;
       if (payload.googleClientId) loadGoogle(payload.googleClientId);
       if (payload.appleClientId && payload.appleRedirectUri && payload.appleState && payload.appleNonce) loadApple(payload);
       show(mode === 'forgot' || mode === 'reset' ? mode : 'login', error);
