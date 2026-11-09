@@ -355,27 +355,23 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .home-privacy { gap: 50px; }
 }
 
-/* Supplied promotional artwork stays complete and keeps its original proportions. */
-.app-preview-pair { min-width: 0; margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 18px; }
-.app-preview-pair img, .app-preview img, .app-preview-gallery img { display: block; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 18px 42px rgba(21, 29, 48, .12); }
-.app-preview-pair img:nth-child(2) { margin-top: 70px; }
-.app-preview-pair figcaption { grid-column: 1 / -1; }
-.app-preview { width: min(100%, 320px); margin: 0 auto; }
-.app-preview figcaption, .app-preview-pair figcaption, .app-preview-note { margin-top: 16px; color: #4e586a; font-size: .82rem; line-height: 1.5; text-align: center; }
+/* Transparent mockups keep their proportions; shadows follow the device silhouette. */
+.app-preview img, .app-preview-gallery img { display: block; width: 100%; height: auto; filter: drop-shadow(0 16px 22px rgba(21, 29, 48, .14)); }
+.app-preview { width: min(100%, 400px); margin: 0 auto; }
+.app-preview-hero { width: min(100%, 470px); }
+.app-preview figcaption, .app-preview-note { margin-top: 16px; color: #4e586a; font-size: .82rem; line-height: 1.5; text-align: center; }
 .progress-section .app-preview figcaption { color: #d2d9e7; }
 .app-preview-section { padding-bottom: 70px; }
 .app-preview-section h2 { max-width: 800px; margin: 0; font-size: clamp(2.7rem, 4.5vw, 4.8rem); line-height: 1.04; font-weight: 760; }
 .app-preview-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 48px; max-width: 700px; margin: 56px auto 0; }
 .app-preview-gallery figure { min-width: 0; margin: 0; }
 .app-preview-gallery figcaption { margin-top: 20px; font-size: 1.15rem; line-height: 1.4; font-weight: 700; }
+.app-preview-gallery h3 { margin: 0; font-size: inherit; }
+.app-preview-gallery p { margin: 10px 0 0; color: #4e586a; font-size: 1rem; font-weight: 400; line-height: 1.5; }
 .app-preview-section .app-preview-note { margin-top: 32px; }
-@media (max-width: 900px) {
-  .app-preview-pair { width: min(100%, 500px); margin-inline: auto; }
-}
 @media (max-width: 560px) {
-  .app-preview-pair { gap: 12px; }
-  .app-preview-pair img:nth-child(2) { margin-top: 40px; }
-  .app-preview { width: min(100%, 300px); }
+  .app-preview { width: min(100%, 340px); }
+  #rutina .app-preview { order: 1; }
   .app-preview-gallery { grid-template-columns: 1fr; justify-items: center; gap: 40px; margin-top: 36px; }
   .app-preview-gallery figure { width: min(100%, 300px); }
 }
