@@ -20,11 +20,11 @@ SIGUE ayuda a cuidar Alimentación, Movimiento y Descanso con constancia y sin c
 - La primera práctica compartida gratuita está contemplada por el cliente, pero el backend local todavía exige Premium para crear prácticas independientes. No anunciar esa gratuidad hasta completar y comprobar el servidor.
 - ChatGPT/MCP está excluido de la entrega iOS actual bajo `SIGUE_MCP_ENABLED`. La presencia de `connect/` no demuestra que la conexión esté disponible desde esta entrega de la app.
 
-El [README de iOS](../sigue-app/README.md) resume el estado y enlaza a las fuentes. Para límites, consultar [`PersonalPremiumAccess.swift`](../sigue-app/sigue-app/Data/Social/PersonalPremiumAccess.swift) y el [contrato pendiente de Premium/Juntos](../sigue-app/PREMIUM_FREEMIUM_BACKEND.md). El servidor es la fuente de autorización social; un texto del paywall no sustituye ese permiso.
+El README de iOS (referencia local: `../sigue-app/README.md`) resume el estado y enlaza a las fuentes. Para límites, consultar `PersonalPremiumAccess.swift` (referencia local: `../sigue-app/sigue-app/Data/Social/PersonalPremiumAccess.swift`) y el contrato pendiente de Premium/Juntos (referencia local: `../sigue-app/PREMIUM_FREEMIUM_BACKEND.md`). El servidor es la fuente de autorización social; un texto del paywall no sustituye ese permiso.
 
 ### Identidad y contenido
 
-- Marca: **#FABB43** y tinta **#222E49**. La web usa Figtree; sus tokens aplicados están en [`css/styles.css`](css/styles.css). La app usa sus propios tokens adaptativos en [`AppColors.swift`](../sigue-app/sigue-app/DesignSystem/AppColors.swift); no copiar entre plataformas sin revisar el uso.
+- Marca: **#FABB43** y tinta **#222E49**. La web usa Figtree; sus tokens aplicados están en [`css/styles.css`](css/styles.css). La app usa sus propios tokens adaptativos en `AppColors.swift` (referencia local: `../sigue-app/sigue-app/DesignSystem/AppColors.swift`); no copiar entre plataformas sin revisar el uso.
 - Iconos e ilustraciones: familia **3D con volumen y sombras suaves**. Reutilizar recursos existentes; no adoptar las propuestas SVG planas anteriores. El logo oficial del pájaro conserva su dibujo plano.
 - Lenguaje claro, humano y sin presión. No inventar resultados, testimonios, precios, compatibilidad o funciones. Distinguir capturas reales, ejemplos ilustrativos y propuestas.
 - Biblioteca editorial local: `~/Downloads/SIGUE Recursos/08 Documentacion/00_LEER_PRIMERO.md`, con guías y briefs para posts, iconos, mockups y desarrollo. Es un complemento local, no necesario para servir la web.
