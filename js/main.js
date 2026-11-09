@@ -18,6 +18,20 @@ menuButton?.addEventListener('click', () => {
 
 navigation?.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
 
+const downloadPrompt = document.querySelector('[data-download-prompt]');
+const homeHero = document.querySelector('.home-hero');
+const homeFinal = document.querySelector('.home-final');
+
+if (downloadPrompt && homeHero && homeFinal && 'IntersectionObserver' in window) {
+  const downloadObserver = new IntersectionObserver(() => {
+    const heroPassed = homeHero.getBoundingClientRect().bottom <= 0;
+    const finalReached = homeFinal.getBoundingClientRect().top <= window.innerHeight;
+    downloadPrompt.hidden = !heroPassed || finalReached;
+  });
+  downloadObserver.observe(homeHero);
+  downloadObserver.observe(homeFinal);
+}
+
 window.addEventListener('scroll', () => {
   header?.classList.toggle('scrolled', window.scrollY > 12);
 }, { passive: true });

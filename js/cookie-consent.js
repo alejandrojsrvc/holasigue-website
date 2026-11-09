@@ -11,16 +11,16 @@
   const landingPaths = new Set(['/es', '/en', '/es.html', '/en.html']);
   const mayMeasurePage = configured && landingPaths.has(location.pathname.replace(/\/$/, ''));
   const strings = english ? {
-    title: 'Cookies and privacy',
-    description: 'Only with your permission, we use Google Analytics to understand visits to this website. Rejecting analytics does not affect access. You can change your choice from “Cookies”.',
+    title: 'Cookies: your choice',
+    description: 'With your permission, Google Analytics helps us understand visits to this website. You can reject it and keep browsing. Change your choice from “Cookies” in the footer.',
     unconfigured: 'Visit analytics is currently disabled. This website remembers your language preference. You can review our privacy policy below.',
     accept: 'Accept analytics', reject: 'Reject analytics', close: 'Close', settings: 'Cookies', privacy: 'Privacy policy',
     enabled: 'Analytics: accepted.', disabled: 'Analytics: rejected.',
     retention: 'Your choice is stored in this browser for 180 days.',
     storageError: 'We could not save your choice in this browser. Analytics stays off. Check your browser settings and try again.',
   } : {
-    title: 'Cookies y privacidad',
-    description: 'Solo con tu permiso usamos Google Analytics para entender las visitas a esta web. Rechazar la analítica no afecta al acceso. Puedes cambiar tu elección desde «Cookies».',
+    title: 'Cookies: tú decides',
+    description: 'Con tu permiso, Google Analytics nos ayuda a entender las visitas a esta web. Puedes rechazarlo y seguir navegando. Cambia tu elección desde «Cookies» en el pie de página.',
     unconfigured: 'La analítica de visitas está desactivada. Esta web recuerda tu preferencia de idioma. Puedes consultar nuestra política de privacidad más abajo.',
     accept: 'Aceptar analítica', reject: 'Rechazar analítica', close: 'Cerrar', settings: 'Cookies', privacy: 'Política de privacidad',
     enabled: 'Analítica: aceptada.', disabled: 'Analítica: rechazada.',
