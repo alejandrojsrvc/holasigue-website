@@ -8,9 +8,9 @@ const $ = (selector) => document.querySelector(selector);
 
 const copy = {
   es: {
-    page: 'Conectar con SIGUE', loadingTitle: 'Conectar SIGUE con ChatGPT',
-    loadingDescription: 'Estamos preparando la conexión.', loginTitle: 'Conectar SIGUE con ChatGPT',
-    loginDescription: 'Entra con tu cuenta SIGUE para conectar ChatGPT.',
+    page: 'Conectar con SIGUE', loadingTitle: 'Autorización de SIGUE',
+    loadingDescription: 'Comprobando la solicitud de autorización.', loginTitle: 'Autorización de SIGUE',
+    loginDescription: 'Esta pantalla gestiona solicitudes de autorización. La conexión con ChatGPT no está disponible desde esta versión de iOS.',
     consentTitle: 'Autorizar la conexión',
     consentDescription: 'Revisa lo que ChatGPT podrá consultar o preparar en tu cuenta.',
     scopeDescriptions: {
@@ -24,28 +24,28 @@ const copy = {
     forgotTitle: 'Recuperar contraseña', forgotDescription: 'Te enviaremos un código al correo de tu cuenta SIGUE.',
     resetTitle: 'Crear nueva contraseña', resetDescription: 'Introduce el código recibido y tu nueva contraseña.',
     unavailableTitle: 'No pudimos continuar la conexión',
-    unavailable: 'Vuelve a iniciar la conexión desde ChatGPT.',
-    loadError: 'No pudimos consultar la autorización. Revisa tu conexión e inténtalo de nuevo desde ChatGPT.',
+    unavailable: 'La conexión no está disponible desde esta versión de iOS. Para una autorización anterior, contacta con privacidad@holasigue.com.',
+    loadError: 'No pudimos consultar esta autorización. Si necesitas ayuda con una solicitud anterior, escribe a privacidad@holasigue.com.',
     emailLabel: 'Correo electrónico', passwordLabel: 'Contraseña', emailButton: 'Entrar en SIGUE',
     forgotLink: '¿Olvidaste tu contraseña?', forgotButton: 'Enviar código', codeLabel: 'Código de 6 cifras',
     newPasswordLabel: 'Nueva contraseña (12 caracteres como mínimo)', resetButton: 'Cambiar contraseña',
     backToLogin: 'Volver a entrar', emailDivider: 'O entra con tu correo de SIGUE', appleButton: 'Continuar con Apple',
     loginHelp: 'Usa el mismo método con el que entras en SIGUE. Podrás revisar los permisos antes de autorizar.',
-    permissionsTitle: 'Permisos solicitados', consentHelp: 'Puedes cancelar ahora o revocar la conexión más tarde desde SIGUE.',
+    permissionsTitle: 'Permisos solicitados', consentHelp: 'Puedes cancelar esta solicitud. Para ayuda con una autorización anterior, escribe a privacidad@holasigue.com.',
     privacyLink: 'Consulta cómo tratamos tus datos',
     allowButton: 'Autorizar conexión', denyButton: 'Cancelar',
     privacyNote: 'Tus datos originales permanecen en el iPhone. Las copias de consulta vencen a los 7 días; no incluyen notas, rutas GPS ni muestras detalladas de Salud. ChatGPT no puede crear ni iniciar sesiones.',
     homeLink: 'Conoce SIGUE', account: 'Cuenta SIGUE', termsLink: 'Términos de uso', skipLink: 'Saltar al contenido',
-    introTitle: 'Tus hábitos, también en la conversación.',
-    introDescription: 'Conecta tu cuenta SIGUE para consultar tu progreso y preparar cambios desde ChatGPT.',
-    principlePermissions: 'Tú decides qué permisos conceder.',
-    principleControl: 'SIGUE valida y aplica los cambios en tu iPhone.',
-    principleRevoke: 'Puedes revocar la conexión desde SIGUE.',
+    introTitle: 'Sobre la conexión con ChatGPT.',
+    introDescription: 'La conexión con ChatGPT no está disponible desde esta versión de iOS. Si necesitas ayuda con una autorización anterior, escribe a privacidad@holasigue.com.',
+    principlePermissions: 'Tu base diaria no necesita esta conexión.',
+    principleControl: 'No se anuncia una fecha de activación.',
+    principleRevoke: 'Privacidad puede ayudarte con autorizaciones anteriores.',
     errors: {
-      request: 'La solicitud de ChatGPT no es válida. Inicia la conexión de nuevo desde ChatGPT.',
-      session: 'La sesión de autorización venció. Inicia la conexión de nuevo desde ChatGPT y permite las cookies.',
-      form: 'No pudimos verificar el formulario. Inicia la conexión de nuevo desde ChatGPT.',
-      flow: 'Esta autorización ya no está disponible. Inicia la conexión de nuevo desde ChatGPT.',
+      request: 'La solicitud de ChatGPT no es válida. Para una autorización anterior, escribe a privacidad@holasigue.com.',
+      session: 'La sesión de autorización venció. Para una autorización anterior, escribe a privacidad@holasigue.com.',
+      form: 'No pudimos verificar el formulario. Para una autorización anterior, escribe a privacidad@holasigue.com.',
+      flow: 'Esta autorización ya no está disponible. Para una autorización anterior, escribe a privacidad@holasigue.com.',
       invalid_credentials: 'El correo o la contraseña no son correctos.',
       account_not_linked: 'Esta cuenta de Apple o Google aún no está vinculada a una cuenta SIGUE.',
       invalid_google_credential: 'No pudimos verificar la identidad recibida de Google. Vuelve a intentarlo.',
@@ -59,9 +59,9 @@ const copy = {
     },
   },
   en: {
-    page: 'Connect with SIGUE', loadingTitle: 'Connect SIGUE to ChatGPT',
-    loadingDescription: 'Preparing your connection.', loginTitle: 'Connect SIGUE to ChatGPT',
-    loginDescription: 'Sign in to your SIGUE account to connect ChatGPT.',
+    page: 'Connect with SIGUE', loadingTitle: 'SIGUE authorization',
+    loadingDescription: 'Checking the authorization request.', loginTitle: 'SIGUE authorization',
+    loginDescription: 'This page handles authorization requests. The ChatGPT connection is not available from this iOS version.',
     consentTitle: 'Authorize connection',
     consentDescription: 'Review what ChatGPT can read or prepare in your account.',
     scopeDescriptions: {
@@ -75,28 +75,28 @@ const copy = {
     forgotTitle: 'Reset your password', forgotDescription: 'We will email a code to your SIGUE account.',
     resetTitle: 'Create a new password', resetDescription: 'Enter the code you received and your new password.',
     unavailableTitle: 'We could not continue the connection',
-    unavailable: 'Start the connection again from ChatGPT.',
-    loadError: 'We could not load the authorization. Check your connection and try again from ChatGPT.',
+    unavailable: 'The connection is not available from this iOS version. For an earlier authorization, contact privacidad@holasigue.com.',
+    loadError: 'We could not load this authorization. For help with an earlier request, email privacidad@holasigue.com.',
     emailLabel: 'Email address', passwordLabel: 'Password', emailButton: 'Sign in to SIGUE',
     forgotLink: 'Forgot your password?', forgotButton: 'Send code', codeLabel: '6-digit code',
     newPasswordLabel: 'New password (at least 12 characters)', resetButton: 'Change password',
     backToLogin: 'Back to sign in', emailDivider: 'Or sign in with your SIGUE email', appleButton: 'Continue with Apple',
     loginHelp: 'Use the same sign-in method you use in SIGUE. You can review permissions before allowing access.',
-    permissionsTitle: 'Requested permissions', consentHelp: 'You can cancel now or revoke the connection later in SIGUE.',
+    permissionsTitle: 'Requested permissions', consentHelp: 'You can cancel this request. For help with an earlier authorization, email privacidad@holasigue.com.',
     privacyLink: 'See how we handle your data',
     allowButton: 'Authorize connection', denyButton: 'Cancel',
     privacyNote: 'Your original data stays on your iPhone. Read copies expire after 7 days and exclude notes, GPS routes and detailed Health samples. ChatGPT cannot create or start sessions.',
     homeLink: 'Explore SIGUE', account: 'SIGUE account', termsLink: 'Terms of use', skipLink: 'Skip to content',
-    introTitle: 'Your habits, part of the conversation.',
-    introDescription: 'Connect your SIGUE account to review your progress and prepare changes from ChatGPT.',
-    principlePermissions: 'You choose which permissions to grant.',
-    principleControl: 'SIGUE validates and applies changes on your iPhone.',
-    principleRevoke: 'You can revoke the connection in SIGUE.',
+    introTitle: 'About the ChatGPT connection.',
+    introDescription: 'The ChatGPT connection is not available from this iOS version. For help with an earlier authorization, email privacidad@holasigue.com.',
+    principlePermissions: 'Your daily base does not need this connection.',
+    principleControl: 'No activation date is being announced.',
+    principleRevoke: 'Contact privacy support about earlier authorizations.',
     errors: {
-      request: 'The ChatGPT request is invalid. Start the connection again from ChatGPT.',
-      session: 'Your authorization session expired. Start again from ChatGPT and allow cookies.',
-      form: 'We could not verify the form. Start the connection again from ChatGPT.',
-      flow: 'This authorization is no longer available. Start again from ChatGPT.',
+      request: 'The ChatGPT request is invalid. For an earlier authorization, email privacidad@holasigue.com.',
+      session: 'Your authorization session expired. For an earlier authorization, email privacidad@holasigue.com.',
+      form: 'We could not verify the form. For an earlier authorization, email privacidad@holasigue.com.',
+      flow: 'This authorization is no longer available. For an earlier authorization, email privacidad@holasigue.com.',
       invalid_credentials: 'The email or password is incorrect.',
       account_not_linked: 'This Apple or Google account is not linked to an existing SIGUE account.',
       invalid_google_credential: 'We could not verify the identity received from Google. Please try again.',
@@ -234,22 +234,21 @@ function loadApple(info) {
   script.onload = () => {
     try {
       window.AppleID.auth.init({ clientId: info.appleClientId, redirectURI: info.appleRedirectUri,
-        state: info.appleState, nonce: info.appleNonce, usePopup: true });
+        state: info.appleState, nonce: info.appleNonce, usePopup: false });
     } catch { button.hidden = true; updateSocialVisibility(); return; }
     button.disabled = false;
     button.addEventListener('click', async () => {
       button.disabled = true;
       try {
-        const result = await window.AppleID.auth.signIn();
-        if (result.authorization?.id_token && result.authorization?.state === info.appleState) {
-          $('#apple-form').elements.state.value = info.csrf;
-          submitIdentity($('#apple-form'), 'identityToken', result.authorization.id_token);
-          return;
-        }
+        // The API callback validates state/nonce and resumes the OAuth interaction.
+        // A full-page redirect also works when the website and callback use different origins.
+        await window.AppleID.auth.signIn();
+      } catch {
         show('login', 'login_failed');
-      } catch { show('login', 'login_failed'); }
-      finally { button.disabled = false; }
+        button.disabled = false;
+      }
     });
+    window.addEventListener('pageshow', () => { button.disabled = false; });
   };
   script.onerror = () => { button.hidden = true; updateSocialVisibility(); };
   document.head.append(script);

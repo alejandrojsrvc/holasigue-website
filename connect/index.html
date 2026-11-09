@@ -25,17 +25,17 @@
   </header>
   <main class="connect-shell shell">
     <div class="connect-intro">
-      <p class="connect-statement" id="intro-title">Tus hábitos, también en la conversación.</p>
-      <p class="connect-summary" id="intro-description">Conecta tu cuenta SIGUE para consultar tu progreso y preparar cambios desde ChatGPT.</p>
+      <p class="connect-statement" id="intro-title">Sobre la conexión con ChatGPT.</p>
+      <p class="connect-summary" id="intro-description">La conexión con ChatGPT no está disponible desde esta versión de iOS. Si necesitas ayuda con una autorización anterior, escribe a privacidad@holasigue.com.</p>
       <ul class="connect-principles">
-        <li id="principle-permissions">Tú decides qué permisos conceder.</li>
-        <li id="principle-control">SIGUE valida y aplica los cambios en tu iPhone.</li>
-        <li id="principle-revoke">Puedes revocar la conexión desde SIGUE.</li>
+        <li id="principle-permissions">Tu base diaria no necesita esta conexión.</li>
+        <li id="principle-control">No se anuncia una fecha de activación.</li>
+        <li id="principle-revoke">Privacidad puede ayudarte con autorizaciones anteriores.</li>
       </ul>
     </div>
     <section class="connect-card" aria-labelledby="title">
-      <h1 id="title">Conectar SIGUE con ChatGPT</h1>
-      <p class="lead" id="description" role="status">Estamos preparando la conexión.</p>
+      <h1 id="title">Autorización de SIGUE</h1>
+      <p class="lead" id="description" role="status">Comprobando la solicitud de autorización.</p>
       <p class="message" id="message" role="alert" hidden></p>
 
       <div id="login" hidden>
@@ -86,7 +86,7 @@
         <p class="account" id="account"></p>
         <h2 id="permissions-title">Permisos solicitados</h2>
         <ul class="permissions" id="permissions"></ul>
-        <p class="consent-help" id="consent-help">Puedes cancelar ahora o revocar la conexión más tarde desde SIGUE.</p>
+        <p class="consent-help" id="consent-help">Puedes cancelar esta solicitud. Para ayuda con una autorización anterior, escribe a privacidad@holasigue.com.</p>
         <form id="consent-form" method="post">
           <input type="hidden" name="csrf" class="csrf">
           <button class="primary" type="submit" name="decision" value="allow" id="allow-button">Autorizar conexión</button>
