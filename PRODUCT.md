@@ -24,7 +24,7 @@ SIGUE reúne los tres esenciales en una experiencia de bienestar personal que pe
 
 - La aplicación está dirigida a iPhone y iPad. La landing está en español e inglés y enlaza a App Store; `/` dirige según preferencia o idioma, y `/es` y `/en` son páginas independientes.
 - La navegación iOS local actual es Hoy, Rutina, Juntos, Estadísticas y Perfil. Rutina ya existe; Retos personales/guiados tiene su pestaña principal oculta. No inferir navegación actual de mockups o páginas anteriores.
-- Soporte, privacidad y datos de salud tienen versiones en español e inglés. Los términos siguen documentados como borrador pendiente de identificación legal del prestador.
+- Soporte, privacidad y datos de salud tienen versiones en español e inglés. Los términos identifican al prestador según los datos autorizados por el usuario; esto no acredita una revisión jurídica para todos los países de distribución.
 - Los enlaces `/join/<token>` muestran una invitación. Después de instalar, la persona vuelve a abrir el enlace original; no hay deferred deep link.
 - Los ejemplos de la landing son ilustrativos; para campañas o capturas reales hay que confirmar la versión de la app anunciada.
 - La landing, soporte, términos y aclaraciones de privacidad y salud se han alineado en español e inglés con el contexto local actual. La conexión de ChatGPT no se anuncia como disponible; se conserva información sobre autorizaciones anteriores. No se han publicado estos cambios durante la revisión.
