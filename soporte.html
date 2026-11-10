@@ -50,7 +50,7 @@
         <strong>Para iPhone y iPad</strong>
       </aside>
 
-      <article class="legal-content">
+      <article class="legal-content support-content">
         <section>
           <h2>Preguntas frecuentes</h2>
           <div class="faq-list">
@@ -100,9 +100,27 @@
           <p>Cuéntanos qué ocurrió, qué modelo de iPhone o iPad utilizas y, si es posible, adjunta una captura sin información sensible.</p>
           <a class="button button-ink" href="mailto:soporte@holasigue.com">soporte@holasigue.com <span aria-hidden="true">↗</span></a>
         </section>
+        <section class="support-appeal" id="apelacion" aria-labelledby="appeal-title">
+          <h2 id="appeal-title">Soporte y apelaciones de Juntos</h2>
+          <p>Para apelar, incluye el identificador de la denuncia o del espacio y explica qué debemos revisar. Para denunciar contenido de Juntos, utiliza las opciones de seguridad de esa persona, grupo o práctica en la app.</p>
+          <p id="appeal-help">Este formulario prepara un correo; no lo envía ni registra una denuncia. Revísalo y envíalo desde tu app de correo. Si no se abre, copia el mensaje y envíalo a soporte@holasigue.com.</p>
+          <form class="support-form" action="mailto:soporte@holasigue.com" method="get" data-support-form>
+            <label for="support-subject">Asunto (obligatorio)</label>
+            <input id="support-subject" name="subject" value="Apelación de Juntos" required maxlength="160" data-required-message="Escribe un asunto, no solo espacios.">
+            <label for="support-message">Mensaje (obligatorio)</label>
+            <textarea id="support-message" name="body" rows="8" maxlength="1000" required aria-describedby="appeal-help support-message-hint" data-required-message="Escribe un mensaje, no solo espacios."></textarea>
+            <small id="support-message-hint">Máximo 1.000 caracteres. No incluyas registros de Salud, contraseñas ni enlaces de invitación.</small>
+            <div class="support-form-actions">
+              <button class="button button-ink" type="submit">Preparar correo</button>
+              <button class="support-copy" type="button" data-support-copy hidden>Copiar mensaje</button>
+            </div>
+            <p class="support-form-status" role="status" aria-live="polite" data-support-status></p>
+          </form>
+          <p><a href="/normas-juntos">Normas de convivencia</a><br><a href="mailto:soporte@holasigue.com">soporte@holasigue.com</a></p>
+        </section>
       </article>
     </div>
-  <section class="shell" id="apelacion"><h2>Soporte y apelaciones de Juntos</h2><p>Para apelar, incluye el identificador de la denuncia o del espacio y explica qué debemos revisar. No envíes registros de Salud, contraseñas ni enlaces de invitación. Este formulario abre un borrador en tu app de correo; revísalo y envíalo desde allí.</p><form action="mailto:soporte@holasigue.com" method="get"><label>Asunto<input name="subject" value="Apelación de Juntos" required maxlength="160"></label><label>Mensaje<textarea name="body" rows="6" maxlength="1000" required></textarea></label><button class="button button-ink" type="submit">Preparar correo de apelación</button></form><p><a href="/normas-juntos">Normas de convivencia</a> — <a href="mailto:soporte@holasigue.com">soporte@holasigue.com</a></p></section></main>
+  </main>
 
   <footer class="site-footer">
     <div class="shell footer-grid">
@@ -113,6 +131,7 @@
     </div>
   </footer>
   <script src="js/main.js" defer></script><script src="/js/language.js" defer></script>
+  <script src="/js/support.js" defer></script>
   <script src="/js/cookie-consent.js" defer></script>
 </body>
 </html>

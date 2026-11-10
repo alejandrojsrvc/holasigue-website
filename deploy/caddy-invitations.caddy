@@ -1,0 +1,17 @@
+# Import inside the holasigue.com site block, before its existing reverse_proxy web:80.
+# Caddy is already the API's trusted proxy; it supplies the real visitor IP itself.
+@sigueInvitationPreview {
+    method GET HEAD
+    path_regexp sigueInvitationPreview "^/api/invitations/([A-Za-z0-9_-]{43})/preview$"
+}
+
+handle @sigueInvitationPreview {
+    rewrite * /v1/invitations/{re.sigueInvitationPreview.1}?
+    reverse_proxy api:3000 {
+        header_up Host api.holasigue.com
+        header_up -Authorization
+        header_up -Cookie
+        header_down X-Content-Type-Options nosniff
+        header_down Strict-Transport-Security "max-age=31536000"
+    }
+}

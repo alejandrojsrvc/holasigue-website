@@ -30,7 +30,7 @@
   <main id="contenido">
     <header class="page-hero shell"><h1>How can we<br>help you keep going?</h1><p>Answers about SIGUE's main features and a direct way to reach us.</p></header>
     <div class="legal-layout shell"><aside class="legal-aside"><p>SIGUE Support</p><strong>For iPhone and iPad</strong></aside>
-      <article class="legal-content"><section><h2>Frequently asked questions</h2><div class="faq-list">
+      <article class="legal-content support-content"><section><h2>Frequently asked questions</h2><div class="faq-list">
 <details class="faq-item"><summary>What is included for free?</summary><p>You can care for your daily base, track sessions, keep up to five active Routine plans, and save up to two reusable gym workouts. A recurring series counts as one plan, not once for every day. Saved workouts are templates: the free version does not limit you to two sessions.</p></details>
 <details class="faq-item"><summary>What does Premium add?</summary><p>Premium gives you more space for Routine plans and saved workouts, lets you import calendars, and allows you to create private Juntos groups and challenges. Editing existing plans and using reminders does not require Premium. Invited members can participate in Juntos for free.</p></details>
 <details class="faq-item"><summary>Where can I see prices and manage my subscription?</summary><p>Check current plans and terms on the purchase screen in SIGUE. The price and currency appear before you confirm; offers may vary by account. Premium is linked to your SIGUE account. You can restore purchases in the app and manage or cancel your subscription in your Apple Account subscription settings.</p></details>
@@ -47,11 +47,30 @@
         <details class="faq-item"><summary>Does SIGUE provide medical advice?</summary><p>No. SIGUE is a general wellbeing app and does not replace evaluation, diagnosis, or treatment by healthcare professionals.</p></details>
       </div></section>
       <section class="support-card"><h2>Didn't find what you need?</h2><p>Tell us what happened, which iPhone or iPad model you use, and, if possible, attach a screenshot without sensitive information.</p><a class="button button-ink" href="mailto:soporte@holasigue.com">Email support <span aria-hidden="true">↗</span></a></section>
+        <section class="support-appeal" id="apelacion" aria-labelledby="appeal-title">
+          <h2 id="appeal-title">Juntos support and appeals</h2>
+          <p>For an appeal, include the report or space identifier and explain what should be reviewed. To report content in Juntos, use the safety options for that participant, group or practice in the app.</p>
+          <p id="appeal-help">This form prepares an email; it does not send it or register a report. Review and send it from your email app. If it does not open, copy the message and email it to soporte@holasigue.com.</p>
+          <form class="support-form" action="mailto:soporte@holasigue.com" method="get" data-support-form>
+            <label for="support-subject">Subject (required)</label>
+            <input id="support-subject" name="subject" value="Juntos appeal" required maxlength="160" data-required-message="Enter a subject, not just spaces.">
+            <label for="support-message">Message (required)</label>
+            <textarea id="support-message" name="body" rows="8" maxlength="1000" required aria-describedby="appeal-help support-message-hint" data-required-message="Enter a message, not just spaces."></textarea>
+            <small id="support-message-hint">Up to 1,000 characters. Do not include Health records, passwords or invitation links.</small>
+            <div class="support-form-actions">
+              <button class="button button-ink" type="submit">Prepare email</button>
+              <button class="support-copy" type="button" data-support-copy hidden>Copy message</button>
+            </div>
+            <p class="support-form-status" role="status" aria-live="polite" data-support-status></p>
+          </form>
+          <p><a href="/en/community">Community rules</a><br><a href="mailto:soporte@holasigue.com">soporte@holasigue.com</a></p>
+        </section>
       </article>
     </div>
-  <section class="shell" id="apelacion"><h2>Juntos support and appeals</h2><p>For an appeal, include the report or space identifier and explain what should be reviewed. Do not include Health records, passwords or invitation links. This form opens a draft in your email app; check it and send it there.</p><form action="mailto:soporte@holasigue.com" method="get"><label>Subject<input name="subject" value="Juntos appeal" required maxlength="160"></label><label>Message<textarea name="body" rows="6" maxlength="1000" required></textarea></label><button class="button button-ink" type="submit">Prepare appeal email</button></form><p><a href="/en/community">Community rules</a> — <a href="mailto:soporte@holasigue.com">soporte@holasigue.com</a></p></section></main>
+  </main>
   <footer class="site-footer"><div class="shell footer-grid"><a class="brand footer-brand" href="/en"><img src="/assets/sigue-icon.png" alt="" width="40" height="40"><span>SIGUE</span></a><p>Wellbeing and personal progress, one day at a time.</p><nav aria-label="Legal links"><a href="/en/privacy">Privacy</a><a href="/en/health-data">Health data</a><a href="/en/support">Support</a><a href="/en/terms">Terms</a><a href="mailto:hola@holasigue.com">Contact</a><button type="button" class="cookie-settings" data-cookie-settings>Cookies</button></nav><small>© <span data-year>2026</span> SIGUE</small></div></footer>
   <script src="/js/main.js" defer></script><script src="/js/language.js" defer></script>
+  <script src="/js/support.js" defer></script>
   <script src="/js/cookie-consent.js" defer></script>
 </body>
 </html>
